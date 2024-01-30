@@ -129,7 +129,7 @@
                                     <div class="divider-text">or</div>
                                 </div>
                                 <div class="auth-footer-btn d-flex justify-content-center">
-                                    <a href="link-here" type="button" class="btn btn-google waves-effect waves-float waves-light">
+                                    <a href="{{ route('google.redirect') }}" type="button" class="btn btn-google waves-effect waves-float waves-light">
                                         <i class="fa-brands fa-google"></i>
                                         <span>Register with Google</span>
                                     </a>
