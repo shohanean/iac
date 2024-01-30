@@ -1,219 +1,209 @@
 <!DOCTYPE html>
+<html class="loading semi-dark-layout" lang="en" data-layout="semi-dark-layout" data-textdirection="ltr">
+<!-- BEGIN: Head-->
 
-<html
-  lang="en"
-  class="light-style layout-wide customizer-hide"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../../assets/"
-  data-template="vertical-menu-template">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Login Page - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="{{ asset('dashboard_assets') }}/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('dashboard_assets') }}/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
-    <title>Login Cover - Pages | Vuexy - Bootstrap Admin Template</title>
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/vendors/css/vendors.min.css">
+    <!-- END: Vendor CSS-->
 
-    <meta name="description" content="" />
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/components.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/themes/semi-dark-layout.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('dashboard_assets') }}/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('dashboard_assets') }}/css/plugins/forms/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_assets') }}/css/pages/authentication.css">
+    <!-- END: Page CSS-->
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
-      rel="stylesheet" />
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <!-- END: Custom CSS-->
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/tabler-icons.css" />
-    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<!-- END: Head-->
 
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../../assets/css/demo.css" />
+<!-- BEGIN: Body-->
 
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
-    <!-- Vendor -->
-    <link rel="stylesheet" href="../../assets/vendor/libs/@form-validation/umd/styles/index.min.css" />
-
-    <!-- Page CSS -->
-    <!-- Page -->
-    <link rel="stylesheet" href="../../assets/vendor/css/pages/page-auth.css" />
-
-    <!-- Helpers -->
-    <script src="../../assets/vendor/js/helpers.js"></script>
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="../../assets/vendor/js/template-customizer.js"></script>
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../../assets/js/config.js"></script>
-  </head>
-
-  <body>
-    <!-- Content -->
-
-    <div class="authentication-wrapper authentication-cover authentication-bg">
-      <div class="authentication-inner row">
-        <!-- /Left Text -->
-        <div class="d-none d-lg-flex col-lg-7 p-0">
-          <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
-            <img
-              src="../../assets/img/illustrations/auth-login-illustration-light.png"
-              alt="auth-login-cover"
-              class="img-fluid my-5 auth-illustration"
-              data-app-light-img="illustrations/auth-login-illustration-light.png"
-              data-app-dark-img="illustrations/auth-login-illustration-dark.png" />
-
-            <img
-              src="../../assets/img/illustrations/bg-shape-image-light.png"
-              alt="auth-login-cover"
-              class="platform-bg"
-              data-app-light-img="illustrations/bg-shape-image-light.png"
-              data-app-dark-img="illustrations/bg-shape-image-dark.png" />
-          </div>
+<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click"
+    data-menu="vertical-menu-modern" data-col="blank-page">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <div class="auth-wrapper auth-cover">
+                    <div class="auth-inner row m-0">
+                        <!-- Brand logo--><a class="brand-logo" href="index.html">
+                            <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
+                                <defs>
+                                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%"
+                                        y2="89.4879456%">
+                                        <stop stop-color="#000000" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%"
+                                        x2="37.373316%" y2="100%">
+                                        <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                    fill-rule="evenodd">
+                                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                                        <g id="Group" transform="translate(400.000000, 178.000000)">
+                                            <path class="text-primary" id="Path"
+                                                d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z"
+                                                style="fill: currentColor"></path>
+                                            <path id="Path1"
+                                                d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z"
+                                                fill="url(#linearGradient-1)" opacity="0.2"></path>
+                                            <polygon id="Path-2" fill="#000000" opacity="0.049999997"
+                                                points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325">
+                                            </polygon>
+                                            <polygon id="Path-21" fill="#000000" opacity="0.099999994"
+                                                points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338">
+                                            </polygon>
+                                            <polygon id="Path-3" fill="url(#linearGradient-2)"
+                                                opacity="0.099999994"
+                                                points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288">
+                                            </polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+                        </a>
+                        <!-- /Brand logo-->
+                        <!-- Left Text-->
+                        <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img
+                                    class="img-fluid" src="{{ asset('dashboard_assets') }}/images/pages/login-v2.svg"
+                                    alt="Login V2" /></div>
+                        </div>
+                        <!-- /Left Text-->
+                        <!-- Login-->
+                        <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                                <h2 class="card-title fw-bold mb-1">Welcome to IAC! 👋</h2>
+                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                                <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
+                                    @csrf
+                                    <div class="mb-1">
+                                        <label class="form-label" for="login-email">Email</label>
+                                        <input class="form-control @error('email') error @enderror" id="login-email"
+                                            type="text" name="email" placeholder="john@example.com"
+                                            aria-describedby="login-email" autofocus="" tabindex="1" />
+                                        @error('email')
+                                            <span class="error">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-label" for="login-password">Password</label><a
+                                                href="{{ route('password.request') }}"><small>Forgot
+                                                    Password?</small></a>
+                                        </div>
+                                        <div class="input-group input-group-merge form-password-toggle">
+                                            <input
+                                                class="form-control form-control-merge @error('password') error @enderror"
+                                                id="login-password" type="password" name="password"
+                                                placeholder="············" aria-describedby="login-password"
+                                                tabindex="2" /><span class="input-group-text cursor-pointer"><i
+                                                    data-feather="eye"></i></span>
+                                            @error('password')
+                                                <span class="error">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="remember-me" type="checkbox"
+                                                tabindex="3" name="remember" />
+                                            <label class="form-check-label" for="remember-me"> Remember Me</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                                </form>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a
+                                        href="{{ route('register') }}"><span>&nbsp;Create an account</span></a></p>
+                                <div class="divider my-2">
+                                    <div class="divider-text">or</div>
+                                </div>
+                                <div class="auth-footer-btn d-flex justify-content-center">
+                                    <a href="link-here" type="button"
+                                        class="btn btn-google waves-effect waves-float waves-light">
+                                        <i class="fa-brands fa-google"></i>
+                                        <span>Login with Google</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Login-->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /Left Text -->
-
-        <!-- Login -->
-        <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4">
-          <div class="w-px-400 mx-auto">
-            <!-- Logo -->
-            <div class="app-brand mb-4">
-              <a href="index.html" class="app-brand-link gap-2">
-                <span class="app-brand-logo demo">
-                  <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
-                      fill="#7367F0" />
-                    <path
-                      opacity="0.06"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z"
-                      fill="#161616" />
-                    <path
-                      opacity="0.06"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z"
-                      fill="#161616" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
-                      fill="#7367F0" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            <!-- /Logo -->
-            <h3 class="mb-1">Welcome to Vuexy! 👋</h3>
-            <p class="mb-4">Please sign-in to your account and start the adventure</p>
-
-            <form id="formAuthentication" class="mb-3" action="index.html" method="GET">
-              <div class="mb-3">
-                <label for="email" class="form-label">Email or Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="email"
-                  name="email-username"
-                  placeholder="Enter your email or username"
-                  autofocus />
-              </div>
-              <div class="mb-3 form-password-toggle">
-                <div class="d-flex justify-content-between">
-                  <label class="form-label" for="password">Password</label>
-                  <a href="auth-forgot-password-cover.html">
-                    <small>Forgot Password?</small>
-                  </a>
-                </div>
-                <div class="input-group input-group-merge">
-                  <input
-                    type="password"
-                    id="password"
-                    class="form-control"
-                    name="password"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="password" />
-                  <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
-                </div>
-              </div>
-              <div class="mb-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="remember-me" />
-                  <label class="form-check-label" for="remember-me"> Remember Me </label>
-                </div>
-              </div>
-              <button class="btn btn-primary d-grid w-100">Sign in</button>
-            </form>
-
-            <p class="text-center">
-              <span>New on our platform?</span>
-              <a href="auth-register-cover.html">
-                <span>Create an account</span>
-              </a>
-            </p>
-
-            <div class="divider my-4">
-              <div class="divider-text">or</div>
-            </div>
-
-            <div class="d-flex justify-content-center">
-              <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
-                <i class="tf-icons fa-brands fa-facebook-f fs-5"></i>
-              </a>
-
-              <a href="javascript:;" class="btn btn-icon btn-label-google-plus me-3">
-                <i class="tf-icons fa-brands fa-google fs-5"></i>
-              </a>
-
-              <a href="javascript:;" class="btn btn-icon btn-label-twitter">
-                <i class="tf-icons fa-brands fa-twitter fs-5"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /Login -->
-      </div>
     </div>
+    <!-- END: Content-->
 
-    <!-- / Content -->
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{ asset('dashboard_assets') }}/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
 
-    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../../assets/vendor/js/bootstrap.js"></script>
-    <script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
-    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
-    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
-    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
-    <script src="../../assets/vendor/js/menu.js"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset('dashboard_assets') }}/vendors/js/forms/validation/jquery.validate.min.js"></script>
+    <!-- END: Page Vendor JS-->
 
-    <!-- endbuild -->
+    <!-- BEGIN: Theme JS-->
+    <script src="{{ asset('dashboard_assets') }}/js/core/app-menu.js"></script>
+    <script src="{{ asset('dashboard_assets') }}/js/core/app.js"></script>
+    <!-- END: Theme JS-->
 
-    <!-- Vendors JS -->
-    <script src="../../assets/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
-    <script src="../../assets/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
-    <script src="../../assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <!-- BEGIN: Page JS-->
+    <script src="{{ asset('dashboard_assets') }}/js/scripts/pages/auth-login.js"></script>
+    <!-- END: Page JS-->
 
-    <!-- Main JS -->
-    <script src="../../assets/js/main.js"></script>
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+</body>
+<!-- END: Body-->
 
-    <!-- Page JS -->
-    <script src="../../assets/js/pages-auth.js"></script>
-  </body>
 </html>
