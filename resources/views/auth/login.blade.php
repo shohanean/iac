@@ -121,7 +121,7 @@
                                         <label class="form-label" for="login-email">Email</label>
                                         <input class="form-control @error('email') error @enderror" id="login-email"
                                             type="text" name="email" placeholder="john@example.com"
-                                            aria-describedby="login-email" autofocus="" tabindex="1" />
+                                            aria-describedby="login-email" autofocus="" tabindex="1" value="{{ old('email') }}"/>
                                         @error('email')
                                             <span class="error">{{ $message }}</span>
                                         @enderror
