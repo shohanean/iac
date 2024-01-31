@@ -296,7 +296,8 @@
                         <!-- Slide 1 -->
                         <li data-index="rs-1" data-transition="zoomout">
                             <!-- MAIN IMAGE -->
-                            <img src="https://via.placeholder.com/1894x770" alt="" class="rev-slidebg">
+                            <img src="{{ asset('frontend_assets') }}/images/main-slider/1.jpg" alt=""
+                                class="rev-slidebg">
 
                             <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
                                 data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
@@ -337,7 +338,8 @@
                         <!-- Slide 2 -->
                         <li data-index="rs-1" data-transition="zoomout">
                             <!-- MAIN IMAGE -->
-                            <img src="https://via.placeholder.com/1894x770" alt="" class="rev-slidebg">
+                            <img src="{{ asset('frontend_assets') }}/images/main-slider/2.jpg" alt=""
+                                class="rev-slidebg">
 
                             <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
                                 data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
@@ -378,7 +380,8 @@
                         <!-- Slide 3 -->
                         <li data-index="rs-1" data-transition="zoomin">
                             <!-- MAIN IMAGE -->
-                            <img src="https://via.placeholder.com/1894x770" alt="" class="rev-slidebg">
+                            <img src="{{ asset('frontend_assets') }}/images/main-slider/3.jpg" alt=""
+                                class="rev-slidebg">
 
                             <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
                                 data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
@@ -751,7 +754,9 @@
                         </div>
                         <div class="features-column col-lg-6">
                             <div class="inner-column">
-                                <figure class="image"><img src="https://via.placeholder.com/366x340" alt="">
+                                <figure class="image"><img
+                                        src="{{ asset('frontend_assets') }}/images/resource/image-1.png"
+                                        alt="">
                                 </figure>
                                 <ul class="features-list">
                                     <li>Entering & Leaving From Country</li>
@@ -1059,7 +1064,9 @@
                                         src="{{ asset('frontend_assets') }}/images/resource/icon-plane.png"
                                         alt="">
                                 </figure>
-                                <figure class="image"><img src="https://via.placeholder.com/862x830" alt="">
+                                <figure class="image"><img
+                                        src="{{ asset('frontend_assets') }}/images/resource/image-3.png"
+                                        alt="">
                                 </figure>
                                 <figure class="stemp"><img
                                         src="{{ asset('frontend_assets') }}/images/resource/stemp-2.png"
@@ -1253,7 +1260,9 @@
                                 </h3>
                             </div>
                             <div class="banner-box-two">
-                                <figure class="image"><img src="https://via.placeholder.com/570x241" alt="">
+                                <figure class="image"><img
+                                        src="{{ asset('frontend_assets') }}/images/resource/image-4.jpg"
+                                        alt="">
                                 </figure>
                                 <h5 class="caption">Immigration Consultant Agency.</h5>
                             </div>
