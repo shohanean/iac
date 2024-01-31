@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Vizox | Visa & Immigrations HTML Template | Home Page 01</title>
+    <title>IAC | Study Abroad Consultancy Firm</title>
     <!-- Stylesheets -->
     <link href="{{ asset('frontend_assets') }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('frontend_assets') }}/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css">
@@ -16,8 +16,8 @@
     <link href="{{ asset('frontend_assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('frontend_assets') }}/css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="{{ asset('frontend_assets') }}/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="{{ asset('frontend_assets') }}/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('iac_favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('iac_favicon.png') }}" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,26 +41,24 @@
                         <!-- Info List -->
                         <ul class="list-style-one">
                             <li><i class="fa fa-envelope"></i> <a
-                                    href="mailto:needhelp@company.com">needhelp@company.com</a></li>
-                            <li><i class="fa fa-map-marker"></i> 88 Broklyn Golden Street. New York</li>
+                                    href="mailto:iacstudyabroad@gmail.com">iacstudyabroad@gmail.com</a></li>
+                            <li><i class="fa fa-map-marker"></i> 27 Shaptak Square Lift - 7, Dhanmondi, Dhaka, Bangladesh</li>
                         </ul>
                     </div>
 
                     <div class="top-right">
                         <ul class="useful-links">
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="outer-box">
-                    <ul class="social-icon-one">
-                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                    <ul class="social-icon-one">                        
+                        <li><a target="_blank" href="https://www.facebook.com/iac.bangladesh"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/internationalapplicationcentre"><span class="fab fa-instagram"></span></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/company/international-application-centre"><span class="fab fa-linkedin"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -71,9 +69,11 @@
                 <!-- Main box -->
                 <div class="main-box">
                     <div class="logo-box">
-                        <div class="logo"><a href="index.html"><img
-                                    src="{{ asset('frontend_assets') }}/images/logo.png" alt=""
-                                    title="Tronis"></a></div>
+                        <div class="logo">
+                            <a href="{{ route('home') }}">
+                                <img width="120" src="{{ asset('iac_logo.png') }}" alt="not found">
+                            </a>
+                        </div>
                     </div>
 
                     <!--Nav Box-->
@@ -263,7 +263,7 @@
                         <!--Logo-->
                         <div class="logo">
                             <a href="index.html" title=""><img
-                                    src="{{ asset('frontend_assets') }}/images/logo.png" alt=""
+                                    src="{{ asset('iac_logo.png') }}" alt=""
                                     title=""></a>
                         </div>
 
@@ -529,11 +529,11 @@
                     <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInLeft">
                             <figure class="image-1 overlay-anim wow fadeInUp"><img
-                                    src="https://via.placeholder.com/400x519" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-1.jpg" alt=""></figure>
                             <figure class="image-2 overlay-anim wow fadeInRight"><img
-                                    src="https://via.placeholder.com/300x247" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-2.jpg" alt=""></figure>
                             <figure class="image-3 overlay-anim wow fadeInLeft"><img
-                                    src="https://via.placeholder.com/180x252" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-3.jpg" alt=""></figure>
                             <figure class="stemp"><img
                                     src="{{ asset('frontend_assets') }}/images/resource/stemp.png" alt="">
                             </figure>
@@ -567,8 +567,8 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="https://via.placeholder.com/270x185"
-                                            class="lightbox-image"><img src="https://via.placeholder.com/270x185"
+                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
+                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -585,8 +585,8 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="https://via.placeholder.com/270x185"
-                                            class="lightbox-image"><img src="https://via.placeholder.com/270x185"
+                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
+                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -603,8 +603,8 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="https://via.placeholder.com/270x185"
-                                            class="lightbox-image"><img src="https://via.placeholder.com/270x185"
+                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
+                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -621,8 +621,8 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="https://via.placeholder.com/270x185"
-                                            class="lightbox-image"><img src="https://via.placeholder.com/270x185"
+                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
+                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -639,8 +639,8 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="https://via.placeholder.com/270x185"
-                                            class="lightbox-image"><img src="https://via.placeholder.com/270x185"
+                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
+                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -908,7 +908,7 @@
                         <div class="inner-column wow fadeInLeft">
                             <div class="image-box">
                                 <figure class="image overlay-anim wow fadeInUp"><img
-                                        src="https://via.placeholder.com/920x470" alt=""></figure>
+                                        src="{{ asset('frontend_assets') }}/images/resource/image-2.jpg" alt=""></figure>
                                 <span class="float-text">Trusted by Clients</span>
                             </div>
                         </div>
