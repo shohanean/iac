@@ -42,7 +42,8 @@
                         <ul class="list-style-one">
                             <li><i class="fa fa-envelope"></i> <a
                                     href="mailto:iacstudyabroad@gmail.com">iacstudyabroad@gmail.com</a></li>
-                            <li><i class="fa fa-map-marker"></i> 27 Shaptak Square Lift - 7, Dhanmondi, Dhaka, Bangladesh</li>
+                            <li><i class="fa fa-map-marker"></i> 27 Shaptak Square Lift - 7, Dhanmondi, Dhaka,
+                                Bangladesh</li>
                         </ul>
                     </div>
 
@@ -55,10 +56,14 @@
                 </div>
 
                 <div class="outer-box">
-                    <ul class="social-icon-one">                        
-                        <li><a target="_blank" href="https://www.facebook.com/iac.bangladesh"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/internationalapplicationcentre"><span class="fab fa-instagram"></span></a></li>
-                        <li><a target="_blank" href="https://www.linkedin.com/company/international-application-centre"><span class="fab fa-linkedin"></span></a></li>
+                    <ul class="social-icon-one">
+                        <li><a target="_blank" href="https://www.facebook.com/iac.bangladesh"><span
+                                    class="fab fa-facebook-square"></span></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/internationalapplicationcentre"><span
+                                    class="fab fa-instagram"></span></a></li>
+                        <li><a target="_blank"
+                                href="https://www.linkedin.com/company/international-application-centre"><span
+                                    class="fab fa-linkedin"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -262,9 +267,8 @@
                     <div class="inner-container">
                         <!--Logo-->
                         <div class="logo">
-                            <a href="index.html" title=""><img
-                                    src="{{ asset('iac_logo.png') }}" alt=""
-                                    title=""></a>
+                            <a href="index.html" title=""><img src="{{ asset('iac_logo.png') }}"
+                                    alt="" title=""></a>
                         </div>
 
                         <!--Right Col-->
@@ -529,11 +533,14 @@
                     <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInLeft">
                             <figure class="image-1 overlay-anim wow fadeInUp"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/about-1.jpg" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-1.jpg" alt="">
+                            </figure>
                             <figure class="image-2 overlay-anim wow fadeInRight"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/about-2.jpg" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-2.jpg" alt="">
+                            </figure>
                             <figure class="image-3 overlay-anim wow fadeInLeft"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/about-3.jpg" alt=""></figure>
+                                    src="{{ asset('frontend_assets') }}/images/resource/about-3.jpg" alt="">
+                            </figure>
                             <figure class="stemp"><img
                                     src="{{ asset('frontend_assets') }}/images/resource/stemp.png" alt="">
                             </figure>
@@ -567,8 +574,10 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
-                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
+                                    <figure class="image"><a
+                                            href="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
+                                            class="lightbox-image"><img
+                                                src="{{ asset('frontend_assets') }}/images/resource/country-1.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -585,8 +594,10 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
-                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
+                                    <figure class="image"><a
+                                            href="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
+                                            class="lightbox-image"><img
+                                                src="{{ asset('frontend_assets') }}/images/resource/country-2.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -603,8 +614,10 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
-                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
+                                    <figure class="image"><a
+                                            href="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
+                                            class="lightbox-image"><img
+                                                src="{{ asset('frontend_assets') }}/images/resource/country-3.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -621,8 +634,10 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
-                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
+                                    <figure class="image"><a
+                                            href="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
+                                            class="lightbox-image"><img
+                                                src="{{ asset('frontend_assets') }}/images/resource/country-4.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -639,8 +654,10 @@
                         <div class="country-block">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><a href="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
-                                            class="lightbox-image"><img src="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
+                                    <figure class="image"><a
+                                            href="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
+                                            class="lightbox-image"><img
+                                                src="{{ asset('frontend_assets') }}/images/resource/country-5.jpg"
                                                 alt=""></a></figure>
                                 </div>
                                 <div class="content-box">
@@ -908,7 +925,8 @@
                         <div class="inner-column wow fadeInLeft">
                             <div class="image-box">
                                 <figure class="image overlay-anim wow fadeInUp"><img
-                                        src="{{ asset('frontend_assets') }}/images/resource/image-2.jpg" alt=""></figure>
+                                        src="{{ asset('frontend_assets') }}/images/resource/image-2.jpg"
+                                        alt=""></figure>
                                 <span class="float-text">Trusted by Clients</span>
                             </div>
                         </div>
@@ -1364,8 +1382,10 @@
         <footer class="main-footer">
             <div class="auto-container">
                 <div class="upper-box">
-                    <div class="logo"><a href="index.html"><img
-                                src="{{ asset('frontend_assets') }}/images/logo-2.png" alt=""></a>
+                    <div class="logo">
+                        <a href="index.html">
+                            <img width="120" src="{{ asset('iac_logo.png') }}" alt="">
+                        </a>
                     </div>
                     <div class="subscribe-form">
                         <h5 class="title">Subscribe to Newsletter</h5>
