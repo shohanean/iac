@@ -1230,20 +1230,24 @@
                             </div>
 
                             <ul class="accordion-box wow fadeInRight">
-                                @foreach ($faqs as $faq)
+                                @forelse ($faqs as $faq)
                                     <!--Block-->
-                                    <li class="accordion block @if ($loop->first) active-block @endif">
-                                        <div class="acc-btn @if ($loop->first) active @endif">
+                                    <li class="accordion block @if ($loop->index == 1) active-block @endif">
+                                        <div class="acc-btn @if ($loop->index == 1) active @endif">
                                             {{ $faq->question }}
                                             <div class="icon fa fa-angle-right"></div>
                                         </div>
-                                        <div class="acc-content @if ($loop->first) current @endif">
+                                        <div class="acc-content @if ($loop->index == 1) current @endif">
                                             <div class="content">
                                                 <div class="text">{!! $faq->answer !!}</div>
                                             </div>
                                         </div>
                                     </li>
-                                @endforeach
+                                @empty
+                                    <li class="text-danger">
+                                        Nothing to show, no FAQ found
+                                    </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

@@ -92,7 +92,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($faqs as $faq)
+                                @forelse ($faqs as $faq)
                                     <tr>
                                         <td>
                                             <span class="fw-bold">{{ $loop->index + 1 }}</span>
@@ -144,7 +144,11 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr class="text-center text-danger">
+                                        <td colspan="50">No FAQ to Show</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
