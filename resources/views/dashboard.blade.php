@@ -1,8 +1,27 @@
 @extends('layouts.app')
 
+@section('dashboard')
+    active
+@endsection
+
 @section('content')
     <!-- Dashboard Ecommerce Starts -->
     <section id="dashboard-ecommerce">
+        <div class="row breadcrumbs-top mb-2">
+            <div class="col-12">
+                <h2 class="content-header-title float-start mb-0">Dashboard</h2>
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb ps-1">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">Layouts</a>
+                        </li>
+                        <li class="breadcrumb-item active">Layout Empty
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <div class="row match-height">
             <!-- Medal Card -->
             <div class="col-xl-4 col-md-6 col-12">
@@ -152,13 +171,11 @@
                                 <h4 class="card-title mb-50 mb-sm-0">Revenue Report</h4>
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex align-items-center me-2">
-                                        <span
-                                            class="bullet bullet-primary font-small-3 me-50 cursor-pointer"></span>
+                                        <span class="bullet bullet-primary font-small-3 me-50 cursor-pointer"></span>
                                         <span>Earning</span>
                                     </div>
                                     <div class="d-flex align-items-center ms-75">
-                                        <span
-                                            class="bullet bullet-warning font-small-3 me-50 cursor-pointer"></span>
+                                        <span class="bullet bullet-warning font-small-3 me-50 cursor-pointer"></span>
                                         <span>Expense</span>
                                     </div>
                                 </div>
@@ -169,8 +186,7 @@
                             <div class="btn-group">
                                 <button type="button"
                                     class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown"
-                                    data-bs-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     2020
                                 </button>
                                 <div class="dropdown-menu">
@@ -230,8 +246,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-primary me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="monitor"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="monitor" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Technology</span>
@@ -247,8 +262,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">68%</span>
-                                                <i data-feather="trending-down"
-                                                    class="text-danger font-medium-1"></i>
+                                                <i data-feather="trending-down" class="text-danger font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -272,8 +286,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-success me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="coffee"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="coffee" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Grocery</span>
@@ -289,8 +302,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">97%</span>
-                                                <i data-feather="trending-up"
-                                                    class="text-success font-medium-1"></i>
+                                                <i data-feather="trending-up" class="text-success font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -314,8 +326,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-warning me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="watch"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="watch" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Fashion</span>
@@ -331,8 +342,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">62%</span>
-                                                <i data-feather="trending-up"
-                                                    class="text-success font-medium-1"></i>
+                                                <i data-feather="trending-up" class="text-success font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -356,8 +366,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-primary me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="monitor"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="monitor" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Technology</span>
@@ -373,8 +382,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">88%</span>
-                                                <i data-feather="trending-up"
-                                                    class="text-success font-medium-1"></i>
+                                                <i data-feather="trending-up" class="text-success font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -398,8 +406,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-success me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="coffee"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="coffee" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Grocery</span>
@@ -415,8 +422,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">16%</span>
-                                                <i data-feather="trending-down"
-                                                    class="text-danger font-medium-1"></i>
+                                                <i data-feather="trending-down" class="text-danger font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -440,8 +446,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-warning me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="watch"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="watch" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Fashion</span>
@@ -457,8 +462,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">78%</span>
-                                                <i data-feather="trending-up"
-                                                    class="text-success font-medium-1"></i>
+                                                <i data-feather="trending-up" class="text-success font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -481,8 +485,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar bg-light-warning me-1">
                                                     <div class="avatar-content">
-                                                        <i data-feather="watch"
-                                                            class="font-medium-3"></i>
+                                                        <i data-feather="watch" class="font-medium-3"></i>
                                                     </div>
                                                 </div>
                                                 <span>Fashion</span>
@@ -498,8 +501,7 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span class="fw-bolder me-1">42%</span>
-                                                <i data-feather="trending-up"
-                                                    class="text-success font-medium-1"></i>
+                                                <i data-feather="trending-up" class="text-success font-medium-1"></i>
                                             </div>
                                         </td>
                                     </tr>
@@ -515,8 +517,8 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card card-developer-meetup">
                     <div class="meetup-img-wrapper rounded-top text-center">
-                        <img src="{{ asset('dashboard_assets') }}/images/illustration/email.svg"
-                            alt="Meeting Pic" height="170" />
+                        <img src="{{ asset('dashboard_assets') }}/images/illustration/email.svg" alt="Meeting Pic"
+                            height="170" />
                     </div>
                     <div class="card-body">
                         <div class="meetup-header d-flex align-items-center">
@@ -552,31 +554,28 @@
                             </div>
                         </div>
                         <div class="avatar-group">
-                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                data-bs-placement="bottom" title="Billy Hopkins"
-                                class="avatar pull-up">
+                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                title="Billy Hopkins" class="avatar pull-up">
                                 <img src="{{ asset('dashboard_assets') }}/images/portrait/small/avatar-s-9.jpg"
                                     alt="Avatar" width="33" height="33" />
                             </div>
-                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                data-bs-placement="bottom" title="Amy Carson" class="avatar pull-up">
+                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                title="Amy Carson" class="avatar pull-up">
                                 <img src="{{ asset('dashboard_assets') }}/images/portrait/small/avatar-s-6.jpg"
                                     alt="Avatar" width="33" height="33" />
                             </div>
-                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                data-bs-placement="bottom" title="Brandon Miles"
-                                class="avatar pull-up">
+                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                title="Brandon Miles" class="avatar pull-up">
                                 <img src="{{ asset('dashboard_assets') }}/images/portrait/small/avatar-s-8.jpg"
                                     alt="Avatar" width="33" height="33" />
                             </div>
-                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                data-bs-placement="bottom" title="Daisy Weber" class="avatar pull-up">
+                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                title="Daisy Weber" class="avatar pull-up">
                                 <img src="{{ asset('dashboard_assets') }}/images/portrait/small/avatar-s-20.jpg"
                                     alt="Avatar" width="33" height="33" />
                             </div>
-                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                data-bs-placement="bottom" title="Jenny Looper"
-                                class="avatar pull-up">
+                            <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="bottom"
+                                title="Jenny Looper" class="avatar pull-up">
                                 <img src="{{ asset('dashboard_assets') }}/images/portrait/small/avatar-s-20.jpg"
                                     alt="Avatar" width="33" height="33" />
                             </div>
@@ -652,8 +651,8 @@
                         </div>
                         <div class="browser-states">
                             <div class="d-flex">
-                                <img src="{{ asset('dashboard_assets') }}/images/icons/opera.png"
-                                    class="rounded me-1" height="30" alt="Opera Mini" />
+                                <img src="{{ asset('dashboard_assets') }}/images/icons/opera.png" class="rounded me-1"
+                                    height="30" alt="Opera Mini" />
                                 <h6 class="align-self-center mb-0">Opera Mini</h6>
                             </div>
                             <div class="d-flex align-items-center">
@@ -671,8 +670,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Goal Overview</h4>
-                        <i data-feather="help-circle"
-                            class="font-medium-3 text-muted cursor-pointer"></i>
+                        <i data-feather="help-circle" class="font-medium-3 text-muted cursor-pointer"></i>
                     </div>
                     <div class="card-body p-0">
                         <div id="goal-overview-radial-bar-chart" class="my-2"></div>
@@ -739,8 +737,7 @@
                             <div class="d-flex">
                                 <div class="avatar bg-light-danger rounded float-start">
                                     <div class="avatar-content">
-                                        <i data-feather="dollar-sign"
-                                            class="avatar-icon font-medium-3"></i>
+                                        <i data-feather="dollar-sign" class="avatar-icon font-medium-3"></i>
                                     </div>
                                 </div>
                                 <div class="transaction-percentage">
@@ -754,8 +751,7 @@
                             <div class="d-flex">
                                 <div class="avatar bg-light-warning rounded float-start">
                                     <div class="avatar-content">
-                                        <i data-feather="credit-card"
-                                            class="avatar-icon font-medium-3"></i>
+                                        <i data-feather="credit-card" class="avatar-icon font-medium-3"></i>
                                     </div>
                                 </div>
                                 <div class="transaction-percentage">
@@ -769,8 +765,7 @@
                             <div class="d-flex">
                                 <div class="avatar bg-light-info rounded float-start">
                                     <div class="avatar-content">
-                                        <i data-feather="trending-up"
-                                            class="avatar-icon font-medium-3"></i>
+                                        <i data-feather="trending-up" class="avatar-icon font-medium-3"></i>
                                     </div>
                                 </div>
                                 <div class="transaction-percentage">

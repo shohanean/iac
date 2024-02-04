@@ -45,6 +45,9 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <!-- END: Head-->
 
@@ -59,8 +62,11 @@
         <div class="navbar-container d-flex content">
             <div class="bookmark-wrapper d-flex align-items-center">
                 <ul class="nav navbar-nav d-xl-none">
-                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon"
-                                data-feather="menu"></i></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-toggle" href="#">
+                            <i class="ficon" data-feather="menu"></i>
+                        </a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav bookmark-icons">
                     <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html"
@@ -501,47 +507,7 @@
             </ul>
         </div>
         <div class="shadow-bottom"></div>
-        <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i
-                            data-feather="home"></i><span class="menu-title text-truncate"
-                            data-i18n="Dashboards">Dashboards</span><span
-                            class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="Analytics">Analytics</span></a>
-                        </li>
-                        <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="eCommerce">eCommerce</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" navigation-header"><span data-i18n="Charts &amp; Maps">Charts &amp; Maps</span><i
-                        data-feather="more-horizontal"></i>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                            data-feather="pie-chart"></i><span class="menu-title text-truncate"
-                            data-i18n="Charts">Charts</span><span
-                            class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="chart-apex.html"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="Apex">Apex</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="chart-chartjs.html"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="Chartjs">Chartjs</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="maps-leaflet.html"><i
-                            data-feather="map"></i><span class="menu-title text-truncate"
-                            data-i18n="Leaflet Maps">Leaflet Maps</span></a>
-                </li>
-            </ul>
-        </div>
+        @include('layouts.parts.dashboard_menu')
     </div>
     <!-- END: Main Menu-->
 
@@ -551,6 +517,7 @@
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
             <div class="content-header row">
+                @yield('breadcrumb')
             </div>
             <div class="content-body">
                 @yield('content')
@@ -592,6 +559,22 @@
     <script src="{{ asset('dashboard_assets') }}/js/scripts/pages/dashboard-ecommerce.js"></script>
     <!-- END: Page JS-->
 
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js" type="text/javascript"></script>
+    <script>
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline'], // toggled buttons
+            ['link'],
+        ];
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+        quill.on('text-change', function(delta, oldDelta, source) {
+            document.getElementById("quill_html").value = quill.root.innerHTML;
+        });
+    </script>
     <script>
         $(window).on('load', function() {
             if (feather) {

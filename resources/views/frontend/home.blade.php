@@ -1224,47 +1224,26 @@
                             <div class="sec-title">
                                 <span class="sub-title">Our faqs</span>
                                 <h2>Frequently Asked Questions.</h2>
-                                <div class="text">Sed rhoncus facilisis purus, at accumsan purus sagittis vitae.
-                                    Nullam acelit at eros imperdiet. Pellentesque sit placerat neque.</div>
+                                <div class="text">Find answers to the most common questions below. If you still can’t
+                                    find the answer you’re looking for, just <a href="/contact-us">Contact Us</a>!
+                                </div>
                             </div>
 
                             <ul class="accordion-box wow fadeInRight">
-                                <!--Block-->
-                                <li class="accordion block">
-                                    <div class="acc-btn">How to get free immigration?
-                                        <div class="icon fa fa-angle-right"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Sed rhoncus facilisis purus, at accumsan purus sagittis
-                                                vitae. Nullam acelit at eros imperdiet. Pellentesque sit.</div>
+                                @foreach ($faqs as $faq)
+                                    <!--Block-->
+                                    <li class="accordion block @if ($loop->first) active-block @endif">
+                                        <div class="acc-btn @if ($loop->first) active @endif">
+                                            {{ $faq->question }}
+                                            <div class="icon fa fa-angle-right"></div>
                                         </div>
-                                    </div>
-                                </li>
-                                <!--Block-->
-                                <li class="accordion block active-block">
-                                    <div class="acc-btn active">Which country is good for residents?
-                                        <div class="icon fa fa-angle-right"></div>
-                                    </div>
-                                    <div class="acc-content current">
-                                        <div class="content">
-                                            <div class="text">Sed rhoncus facilisis purus, at accumsan purus sagittis
-                                                vitae. Nullam acelit at eros imperdiet. Pellentesque sit.</div>
+                                        <div class="acc-content @if ($loop->first) current @endif">
+                                            <div class="content">
+                                                <div class="text">{!! $faq->answer !!}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <!--Block-->
-                                <li class="accordion block">
-                                    <div class="acc-btn">Canada study visa requirements?
-                                        <div class="icon fa fa-angle-right"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Sed rhoncus facilisis purus, at accumsan purus sagittis
-                                                vitae. Nullam acelit at eros imperdiet. Pellentesque sit.</div>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -1274,7 +1253,7 @@
                         <div class="inner-column">
                             <div class="banner-box-one">
                                 <i class="icon flaticon-visa-4"></i>
-                                <h3 class="title">Have 30+ Years Immigration Experience for Give you Visa Approval.
+                                <h3 class="title">Have 10+ Years Of Visa Experience To Give You Right Guidance.
                                 </h3>
                             </div>
                             <div class="banner-box-two">
@@ -1282,7 +1261,7 @@
                                         src="{{ asset('frontend_assets') }}/images/resource/image-4.jpg"
                                         alt="">
                                 </figure>
-                                <h5 class="caption">Immigration Consultant Agency.</h5>
+                                <h5 class="caption">Consultant Agency.</h5>
                             </div>
                         </div>
                     </div>
