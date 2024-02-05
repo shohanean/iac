@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('question');
             $table->text('answer');
             $table->integer('user_id');
+            $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -34,5 +34,11 @@
                 </li>
             </ul>
         </li>
+        <li class="nav-item">
+            <a class="d-flex align-items-center" href="{{ route('home') }}" target="_blank">
+                <i class="fa fa-globe"></i>
+                <span class="menu-title text-truncate" data-i18n="Leaflet Maps">Visit Website</span>
+            </a>
+        </li>
     </ul>
 </div>

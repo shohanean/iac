@@ -65,6 +65,21 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
+        $faq->delete();
+        return back();
+    }
+
+    /**
+     * Custom functions
+     */
+    public function faq_status_toggle(Faq $faq)
+    {
+        if ($faq->status) {
+            $faq->status = false;
+        } else {
+            $faq->status = true;
+        }
+        $faq->save();
+        return back();
     }
 }
