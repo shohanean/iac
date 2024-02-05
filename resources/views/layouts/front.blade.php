@@ -85,93 +85,22 @@
                     <div class="nav-outer">
                         <nav class="nav main-menu">
                             <ul class="navigation">
-                                <li class="current dropdown"><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home page 01</a></li>
-                                        <li><a href="index-2.html">Home page 02</a></li>
-                                        <li><a href="index-3.html">Home page 03</a></li>
-                                        <li class="dropdown"><a href="#">Single</a>
-                                            <ul>
-                                                <li><a href="index-1-single.html">Home Single 1</a></li>
-                                                <li><a href="index-2-single.html">Home Single 2</a></li>
-                                                <li><a href="index-3-single.html">Home Single 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Boxed</a>
-                                            <ul>
-                                                <li><a href="index-1-boxed.html">Home Boxed 1</a></li>
-                                                <li><a href="index-2-boxed.html">Home Boxed 2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">RTL</a>
-                                            <ul>
-                                                <li><a href="index-1-rtl.html">Home RTL 1</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index.html">Header Style One</a></li>
-                                                <li><a href="index-2.html">Header Style Two</a></li>
-                                                <li><a href="index-3.html">Header Style three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="page-about.html">About</a></li>
-                                        <li class="dropdown"><a href="#">Country</a>
-                                            <ul>
-                                                <li><a href="page-country.html">Country grid</a></li>
-                                                <li><a href="page-country-details.html">Country Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Team</a>
-                                            <ul>
-                                                <li><a href="page-team.html">Team List</a></li>
-                                                <li><a href="page-team-details.html">Team Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="page-testimonial.html">Testimonial</a></li>
-                                        <li><a href="page-FAQ.html">FAQ</a></li>
-                                        <li><a href="page-404.html">Page 404</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Coaching</a>
-                                    <ul>
-                                        <li><a href="page-course.html">Coaching grid</a></li>
-                                        <li><a href="page-course-details.html">Coaching Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Visa</a>
-                                    <ul>
-                                        <li><a href="page-service.html">Visa grid</a></li>
-                                        <li><a href="page-service-details.html">Visa Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Shop</a>
-                                    <ul>
-                                        <li><a href="shop-products.html">Products</a></li>
-                                        <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-                                        <li><a href="shop-product-details.html">Product Details</a></li>
-                                        <li><a href="shop-cart.html">Cart</a></li>
-                                        <li><a href="shop-checkout.html">Checkout</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">News</a>
+                                <li class="@yield('home')"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="@yield('about')"><a href="{{ route('about') }}">About</a></li>
+                                <li class="@yield('contact.us')"><a href="{{ route('contact.us') }}">Contact Us</a></li>
+                                <li class="dropdown"><a href="#">Reserved</a>
                                     <ul>
                                         <li><a href="news-grid.html">News Grid</a></li>
                                         <li><a href="news-details.html">News Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('contact.us') }}">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- Main Menu End-->
                         <div class="outer-box">
-                            <a href="tel:+92(8800)9806" class="info-btn">
+                            <a href="tel:+8801829311243" class="info-btn">
                                 <i class="icon fa fa-phone"></i>
-                                <small>Call Anytime</small><br> + 88 ( 9800 ) 6802
+                                <small>Call Anytime</small><br> +8801829311243
                             </a>
 
                             <div class="ui-btn-outer">

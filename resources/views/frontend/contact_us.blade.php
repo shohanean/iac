@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('contact.us')
+    current
+@endsection
+
 @section('content')
     <section class="page-title"
         style="background-image: url({{ asset('frontend_assets/images/background/page-title.jpg') }})">
@@ -72,9 +76,9 @@
                             <span class="sub-title">Need any help?</span>
                             <h2>Get in touch with us</h2>
                             <div class="text">
-                                Lorem ipsum is simply free text available dolor sit amet
-                                consectetur notted adipisicing elit sed do eiusmod tempor
-                                incididunt simply dolore magna.
+                                Feel free to reach out to us through the contact details below, and our dedicated team will
+                                get back to you promptly. Your global educational journey awaits, and we're here to guide
+                                you every step of the way.
                             </div>
                         </div>
                         <ul class="list-unstyled contact-details__info">
@@ -84,7 +88,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Have any question?</h6>
-                                    <a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
+                                    <a href="tel:+8801829311243">+8801829311243</a>
                                 </div>
                             </li>
                             <li>
@@ -93,10 +97,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Write email</h6>
-                                    <a
-                                        href="https://html.kodesolution.com/cdn-cgi/l/email-protection#f7999292939f929b87b794989a8796998ed994989a"><span
-                                            class="__cf_email__"
-                                            data-cfemail="e7898282838f828b97a784888a9786899ec984888a">[email&#160;protected]</span></a>
+                                    <a href="mailto:apply@iacedu.info">apply@iacedu.info</a>
                                 </div>
                             </li>
                             <li>
@@ -105,7 +106,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Visit anytime</h6>
-                                    <span>66 broklyn golden street. New York</span>
+                                    <span>27 Shaptak Square Lift - 7, Dhanmondi</span>
                                 </div>
                             </li>
                         </ul>

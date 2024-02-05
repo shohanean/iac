@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('home')
+    current
+@endsection
+
 @section('content')
     <!--Main Slider-->
     <section class="main-slider">
