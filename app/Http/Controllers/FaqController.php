@@ -49,7 +49,7 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
-        return view('backend.faq.edit');
+        return view('backend.faq.edit', compact('faq'));
     }
 
     /**
@@ -57,7 +57,15 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $faq->question = $request->question;
+        $faq->answer = $request->answer;
+        if ($request->status == 'on') {
+            $faq->status = true;
+        } else {
+            $faq->status = false;
+        }
+        $faq->save();
+        return back()->with('success', 'FAQ Edited Successfully!');
     }
 
     /**
