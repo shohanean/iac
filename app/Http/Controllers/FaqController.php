@@ -13,6 +13,7 @@ class FaqController extends Controller
     public function index()
     {
         return view('backend.faq.index', [
+            'term' => 'FAQ',
             'faqs' => Faq::all()
         ]);
     }
@@ -22,7 +23,9 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('backend.faq.create');
+        return view('backend.faq.create', [
+            'term' => 'FAQ'
+        ]);
     }
 
     /**
@@ -49,7 +52,8 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
-        return view('backend.faq.edit', compact('faq'));
+        $term = 'FAQ';
+        return view('backend.faq.edit', compact('faq', 'term'));
     }
 
     /**

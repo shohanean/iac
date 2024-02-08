@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('faq.index')
+@section('faq.create')
     active
 @endsection
 
@@ -8,12 +8,12 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-start mb-0">Edit {{ $term }} - {{ $faq->question }}</h2>
+                <h2 class="content-header-title float-start mb-0">Add {{ $term }}</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('faq.index') }}">All {{ $term }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Edit Faq
+                        <li class="breadcrumb-item active">Add {{ $term }}
                         </li>
                     </ol>
                 </div>
@@ -71,11 +71,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit {{ $term }}</h4>
+                    <h4 class="card-title">Add {{ $term }}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        You can <code>edit</code> {{ $term }} here
+                        You can <code>add</code> new {{ $term }} here
                     </p>
                     @if (session('success'))
                         <div class="alert alert-success" role="alert">
@@ -85,56 +85,41 @@
                             </div>
                         </div>
                     @endif
-                    <form action="{{ route('faq.update', $faq->id) }}" method="POST">
+                    <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PATCH')
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="question">Question</label>
-                                    <input type="text" class="form-control" id="question" placeholder="Question"
-                                        name="question" value="{{ $faq->question }}">
+                                    <label class="form-label">Banner Image</label>
+                                    <input type="file" class="form-control" name="image">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="answer">Answer</label>
-                                    <div id="editor" height="350">
-                                        {!! $faq->answer !!}
-                                    </div>
-                                    <input type="hidden" id="quill_html" name="answer"
-                                        value="{{ $faq->answer }}"></input>
+                                    <label class="form-label">Top Line</label>
+                                    <input type="text" class="form-control" name="top_line">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label" for="question">Status</label>
-                                    <div class="d-flex flex-column">
-                                        <div class="form-check form-switch form-check-success">
-                                            <input name="status" type="checkbox" class="form-check-input"
-                                                id="customSwitch111" @if ($faq->status) checked @endif>
-                                            <label class="form-check-label" for="customSwitch111">
-                                                <span class="switch-icon-left"><svg xmlns="http://www.w3.org/2000/svg"
-                                                        width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" class="feather feather-check">
-                                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                                    </svg></span>
-                                                <span class="switch-icon-right"><svg xmlns="http://www.w3.org/2000/svg"
-                                                        width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" class="feather feather-x">
-                                                        <line x1="18" y1="6" x2="6"
-                                                            y2="18"></line>
-                                                        <line x1="6" y1="6" x2="18"
-                                                            y2="18"></line>
-                                                    </svg></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <label class="form-label">Tag Line</label>
+                                    <input type="text" class="form-control" name="tag_line">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-1">
+                                    <label class="form-label">Button Text</label>
+                                    <input type="text" class="form-control" name="btn_text">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-1">
+                                    <label class="form-label">Button Text</label>
+                                    <input type="text" class="form-control" name="btn_link">
                                 </div>
                             </div>
                         </div>
+
                         <button class="btn btn-primary waves-effect waves-float waves-light"
                             type="submit">Submit</button>
                     </form>

@@ -49,8 +49,12 @@
 
                     <div class="top-right">
                         <ul class="useful-links">
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            @auth
+                                <li><a href="{{ route('dashboard') }}"><i class="fa fa-user-circle"></i> Dashboard</a></li>
+                            @else
+                                <li><a href="{{ route('login') }}">Login</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+                            @endauth
                         </ul>
                     </div>
                 </div>

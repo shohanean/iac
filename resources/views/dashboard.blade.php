@@ -55,12 +55,12 @@
                                 <div class="d-flex flex-row">
                                     <div class="avatar bg-light-primary me-2">
                                         <div class="avatar-content">
-                                            <i data-feather="trending-up" class="avatar-icon"></i>
+                                            <i class="fa-regular fa-circle-question fa-2x"></i>
                                         </div>
                                     </div>
                                     <div class="my-auto">
-                                        <h4 class="fw-bolder mb-0">230k</h4>
-                                        <p class="card-text font-small-3 mb-0">Sales</p>
+                                        <h4 class="fw-bolder mb-0">{{ $faqs }}</h4>
+                                        <p class="card-text font-small-3 mb-0">FAQs</p>
                                     </div>
                                 </div>
                             </div>
@@ -68,12 +68,12 @@
                                 <div class="d-flex flex-row">
                                     <div class="avatar bg-light-info me-2">
                                         <div class="avatar-content">
-                                            <i data-feather="user" class="avatar-icon"></i>
+                                            <i class="fa-regular fa-images fa-2x"></i>
                                         </div>
                                     </div>
                                     <div class="my-auto">
                                         <h4 class="fw-bolder mb-0">8.549k</h4>
-                                        <p class="card-text font-small-3 mb-0">Customers</p>
+                                        <p class="card-text font-small-3 mb-0">Banners</p>
                                     </div>
                                 </div>
                             </div>

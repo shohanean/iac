@@ -11,6 +11,23 @@
         </li>
         <li class="nav-item">
             <a class="d-flex align-items-center" href="#">
+                <i class="fa-regular fa-images"></i>
+                <span class="menu-title text-truncate" data-i18n="Charts">Banner</span>
+            </a>
+            <ul class="menu-content">
+                <li class="@yield('banner.create')"><a class="d-flex align-items-center"
+                        href="{{ route('banner.create') }}"><i data-feather="circle"></i><span
+                            class="menu-item text-truncate" data-i18n="Chartjs">Add
+                            Banner</span></a>
+                </li>
+                <li class="@yield('banner.index')"><a class="d-flex align-items-center" href="{{ route('banner.index') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">All
+                            Banner</span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="d-flex align-items-center" href="#">
                 <i class="fa-regular fa-circle-question"></i>
                 <span class="menu-title text-truncate" data-i18n="Charts">FAQ</span>
             </a>

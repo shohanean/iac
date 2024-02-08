@@ -8,12 +8,12 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-start mb-0">Add FAQ</h2>
+                <h2 class="content-header-title float-start mb-0">Add {{ $term }}</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Add FAQ
+                        <li class="breadcrumb-item active">Add {{ $term }}
                         </li>
                     </ol>
                 </div>
@@ -71,11 +71,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Add FAQ</h4>
+                    <h4 class="card-title">Add {{ $term }}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        You can <code>add</code> new FAQ here
+                        You can <code>add</code> new {{ $term }} here
                     </p>
                     @if (session('success'))
                         <div class="alert alert-success" role="alert">

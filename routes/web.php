@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,5 +35,6 @@ Route::get('google/callback', [GoogleController::class, 'callback'])->name('goog
 
 Route::get('faq/status/toggle/{faq}', [FaqController::class, 'faq_status_toggle'])->name('faq.status.toggle');
 Route::resource('faq', FaqController::class);
+Route::resource('banner', BannerController::class);
 
 require __DIR__ . '/auth.php';
