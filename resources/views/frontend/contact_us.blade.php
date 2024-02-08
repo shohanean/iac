@@ -27,40 +27,64 @@
                         <h2>Feel free to write</h2>
                     </div>
 
-                    <form id="contact_form" name="contact_form" class
-                        action="https://html.kodesolution.com/2022/vizox-html/includes/sendmail.php" method="post">
+                    <form id="contact_form" action="{{ route('contact.us.post') }}" method="POST">
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">Success!</h4>
+                                <hr />
+                                <p class="mb-0">{{ session('success') }}</p>
+                            </div>
+                        @endif
+
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name" />
+                                    <input name="name" class="form-control @error('name') is-invalid @enderror"
+                                        type="text" placeholder="Enter Name" value="{{ old('name') }}" />
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_email" class="form-control required email" type="email"
-                                        placeholder="Enter Email" />
+                                    <input name="email" class="form-control @error('email') is-invalid @enderror"
+                                        type="text" placeholder="Enter Email" value="{{ old('email') }}" />
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_subject" class="form-control required" type="text"
-                                        placeholder="Enter Subject" />
+                                    <input name="subject" class="form-control @error('subject') is-invalid @enderror"
+                                        type="text" placeholder="Enter Subject" value="{{ old('subject') }}" />
+                                    @error('subject')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_phone" class="form-control" type="text"
-                                        placeholder="Enter Phone" />
+                                    <input name="phone" class="form-control @error('phone') is-invalid @enderror"
+                                        type="text" placeholder="Enter Phone" value="{{ old('phone') }}" />
+                                    @error('phone')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                            <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="7"
+                                placeholder="Enter Message">{{ old('message') }}</textarea>
+                            @error('message')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <input name="form_botcheck" class="form-control" type="hidden" value />
                             <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait...">
                                 <span class="btn-title">Send message</span>
                             </button>

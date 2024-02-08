@@ -14,7 +14,10 @@ class BannerController extends Controller
      */
     public function index()
     {
-        return Banner::all();
+        return view('backend.banner.index', [
+            'term' => 'Banner',
+            'banners' => Banner::all()
+        ]);
     }
 
     /**

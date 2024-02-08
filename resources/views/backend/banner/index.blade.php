@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('faq.index')
+@section('banner.index')
     active
 @endsection
 
@@ -84,32 +84,30 @@
                             <thead>
                                 <tr>
                                     <th>SL. No</th>
-                                    <th>Question</th>
-                                    <th>Answer</th>
-                                    <th>Added By</th>
-                                    <th>Added At</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
+                                    <th>Image</th>
+                                    <th>Top Line</th>
+                                    <th>Tag Line</th>
+                                    <th>Button Status</th>
+                                    <th>Button Text</th>
+                                    <th>Button Link</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($faqs as $faq)
+                                @forelse ($banners as $banner)
                                     <tr>
                                         <td>
                                             <span class="fw-bold">{{ $loop->index + 1 }}</span>
                                         </td>
-                                        <td>{{ $faq->question }}</td>
-                                        <td>{!! $faq->answer !!}</td>
-                                        <td>Admin</td>
-                                        <td>{{ $faq->created_at->diffForHumans() }}</td>
                                         <td>
-                                            @if ($faq->status == true)
-                                                <span class="badge rounded-pill badge-light-primary me-1">Active</span>
-                                            @else
-                                                <span class="badge rounded-pill badge-light-warning me-1">Deactive</span>
-                                            @endif
+                                            <img width="150" src="{{ asset('uploads') }}/{{ $banner->image }}"
+                                                alt="not found">
                                         </td>
-                                        <td>
+                                        <td>{{ $banner->top_line }}</td>
+                                        <td>{{ $banner->tag_line }}</td>
+                                        <td>{{ $banner->btn_status }}</td>
+                                        <td>{{ $banner->btn_text }}</td>
+                                        <td>{{ $banner->btn_link }}</td>
+                                        {{-- <td>
                                             <div class="dropdown">
                                                 <button type="button"
                                                     class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light"
@@ -149,7 +147,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @empty
                                     <tr class="text-center text-danger">

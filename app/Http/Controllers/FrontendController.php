@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use App\Models\Banner;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -21,5 +22,14 @@ class FrontendController extends Controller
     public function contact_us()
     {
         return view('frontend.contact_us');
+    }
+    public function contact_us_post(Request $request)
+    {
+        $request->validate([
+            '*' => 'required',
+            'email' => 'email',
+        ]);
+        Contact::create($request->except('_token'));
+        return back()->with('success', 'Message Send Successfully!');
     }
 }

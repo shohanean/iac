@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('faq.create')
+@section('banner.create')
     active
 @endsection
 
@@ -114,7 +114,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label">Button Text</label>
+                                    <label class="form-label">Button Link</label>
                                     <input type="text" class="form-control" name="btn_link">
                                 </div>
                             </div>
