@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class FrontendController extends Controller
     {
         $faqs = Faq::where('status', true)->get();
         $banners = Banner::all();
-        return view('frontend.home', compact('faqs', 'banners'));
+        $blogs = Blog::all();
+        return view('frontend.home', compact('faqs', 'banners', 'blogs'));
     }
     public function about()
     {

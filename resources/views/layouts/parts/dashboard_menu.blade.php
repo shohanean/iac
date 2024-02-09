@@ -42,6 +42,22 @@
                 </li>
             </ul>
         </li>
+        <li class="nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fa-solid fa-blog"></i>
+                <span class="menu-title text-truncate" data-i18n="Charts">Blog</span>
+            </a>
+            <ul class="menu-content">
+                <li class="@yield('blog.create')"><a class="d-flex align-items-center" href="{{ route('blog.create') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Chartjs">Add
+                            Blog</span></a>
+                </li>
+                <li class="@yield('blog.index')"><a class="d-flex align-items-center" href="{{ route('blog.index') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">All
+                            Blog</span></a>
+                </li>
+            </ul>
+        </li>
         <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span
                     class="menu-title text-truncate" data-i18n="Charts">Reserved</span><span
                     class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>
