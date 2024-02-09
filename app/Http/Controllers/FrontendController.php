@@ -14,12 +14,23 @@ class FrontendController extends Controller
     {
         $faqs = Faq::where('status', true)->get();
         $banners = Banner::all();
-        $blogs = Blog::all();
+        $blogs = Blog::with('user')->latest()->take(3)->get();
         return view('frontend.home', compact('faqs', 'banners', 'blogs'));
     }
     public function about()
     {
         return view('frontend.about');
+    }
+    public function blogs()
+    {
+        $blogs = Blog::with('user')->latest()->get();
+        return view('frontend.blogs.index', compact('blogs'));
+    }
+    public function blogs_details($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $latests = Blog::with('user')->latest()->take(3)->get();
+        return view('frontend.blogs.show', compact('blog', 'latests'));
     }
     public function contact_us()
     {

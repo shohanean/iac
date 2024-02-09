@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('about', [FrontendController::class, 'about'])->name('about');
+Route::get('blogs', [FrontendController::class, 'blogs'])->name('blogs');
+Route::get('blogs/{slug}', [FrontendController::class, 'blogs_details'])->name('blogs.details');
 Route::get('contact-us', [FrontendController::class, 'contact_us'])->name('contact.us');
 Route::post('contact-us', [FrontendController::class, 'contact_us_post'])->name('contact.us.post');
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');

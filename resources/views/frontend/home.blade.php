@@ -558,5 +558,17 @@
         </div>
     </section>
     <!--End Call To Action -->
-    @include('frontend.parts.blogs')
+
+    <!-- Blog Section -->
+    <section class="news-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <span class="sub-title">Our Recent Blog</span>
+                <h2>Latest News & Articles <br>From the Blog.</h2>
+            </div>
+            @include('frontend.parts.blogs')
+        </div>
+    </section>
+    <!--End Blog Section -->
+
 @endsection

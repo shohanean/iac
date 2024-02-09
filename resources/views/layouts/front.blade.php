@@ -91,6 +91,7 @@
                             <ul class="navigation">
                                 <li class="@yield('home')"><a href="{{ route('home') }}">Home</a></li>
                                 <li class="@yield('about')"><a href="{{ route('about') }}">About</a></li>
+                                <li class="@yield('blogs')"><a href="{{ route('blogs') }}">Blogs</a></li>
                                 <li class="@yield('contact.us')"><a href="{{ route('contact.us') }}">Contact Us</a></li>
                                 <li class="dropdown"><a href="#">Reserved</a>
                                     <ul>

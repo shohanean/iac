@@ -37,6 +37,7 @@ class BlogController extends Controller
         $image->save(base_path('public/uploads/' . $photoname), 40);
 
         Blog::create([
+            'slug' => Str::slug($request->heading)."-".Str::lower(Str::random(3)),
             'user_id' => auth()->id(),
             'heading' => $request->heading,
             'details' => $request->details,
