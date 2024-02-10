@@ -90,6 +90,7 @@
                                     <th>Button Status</th>
                                     <th>Button Text</th>
                                     <th>Button Link</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,10 +105,16 @@
                                         </td>
                                         <td>{{ $banner->top_line }}</td>
                                         <td>{{ $banner->tag_line }}</td>
-                                        <td>{{ $banner->btn_status }}</td>
+                                        <td>
+                                            @if ($banner->btn_status)
+                                                <span class="text-success">Show</span>
+                                            @else
+                                                <span class="text-danger">Hide</span>
+                                            @endif
+                                        </td>
                                         <td>{{ $banner->btn_text }}</td>
                                         <td>{{ $banner->btn_link }}</td>
-                                        {{-- <td>
+                                        <td>
                                             <div class="dropdown">
                                                 <button type="button"
                                                     class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light"
@@ -122,7 +129,7 @@
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end" style="">
-                                                    <a class="dropdown-item" href="{{ route('faq.edit', $faq->id) }}">
+                                                    {{-- <a class="dropdown-item" href="{{ route('faq.edit', $faq->id) }}">
                                                         <i class="fa fa-pencil"></i>
                                                         <span>Edit</span>
                                                     </a>
@@ -138,8 +145,8 @@
                                                             <i class="fa-solid fa-check"></i>
                                                             <span>Active</span>
                                                         </a>
-                                                    @endif
-                                                    <form action="{{ route('faq.destroy', $faq->id) }}" method="POST">
+                                                    @endif --}}
+                                                    <form action="{{ route('banner.destroy', $banner->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="dropdown-item text-danger"><i
@@ -147,7 +154,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        </td> --}}
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr class="text-center text-danger">

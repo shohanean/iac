@@ -280,10 +280,10 @@
             </div>
         </div>
     </section>
-    <!--Emd About Section Two -->
+    <!--End About Section Two -->
 
     <!-- Clients Section   -->
-    <section class="clients-section">
+    {{-- <section class="clients-section">
         <div class="auto-container">
             <!-- Sponsors Outer -->
             <div class="sponsors-outer">
@@ -302,7 +302,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End Clients Section -->
 
     <!-- Fun Fact Section -->
