@@ -58,6 +58,15 @@
                 </li>
             </ul>
         </li>
+        <li class="@yield('contacts') nav-item">
+            <a class="d-flex align-items-center" href="{{ route('contacts') }}">
+                <i class="fa-regular fa-comments"></i>
+                <span class="menu-title text-truncate" data-i18n="Leaflet Maps">
+                    Contacts
+                    <span class="badge badge-light-success rounded-pill ms-auto me-2">{{ contacts() }}</span>
+                </span>
+            </a>
+        </li>
         <li class="@yield('settings') nav-item">
             <a class="d-flex align-items-center" href="{{ route('settings') }}">
                 <i class="fa-solid fa-gears"></i>

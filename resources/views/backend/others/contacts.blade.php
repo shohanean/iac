@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('faq.index')
+@section('contacts')
     active
 @endsection
 
@@ -75,42 +75,35 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        You will see all your {{ $term }}s here. You can <code>edit</code> and also can
-                        <code>active/deactive</code>
-                        {{ $term }}s here.
+                        You will see all your <code>{{ $term }} Messages</code> here.
                     </p>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>SL. No</th>
-                                    <th>Question</th>
-                                    <th>Answer</th>
-                                    <th>Added By</th>
-                                    <th>Added At</th>
-                                    <th>Status</th>
+                                    <th>name</th>
+                                    <th>email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($faqs as $faq)
+                                @forelse ($contacts as $contact)
                                     <tr>
                                         <td>
                                             <span class="fw-bold">{{ $loop->index + 1 }}</span>
                                         </td>
-                                        <td>{{ $faq->question }}</td>
-                                        <td>{!! $faq->answer !!}</td>
-                                        <td>Admin</td>
-                                        <td>{{ $faq->created_at->diffForHumans() }}</td>
+                                        <td>{{ $contact->name }}</td>
+                                        <td>{{ $contact->email }}</td>
+                                        <td>{{ $contact->phone }}</td>
+                                        <td>{{ $contact->subject }}</td>
+                                        <td>{{ $contact->message }}</td>
                                         <td>
-                                            @if ($faq->status == true)
-                                                <span class="badge rounded-pill badge-light-primary me-1">Active</span>
-                                            @else
-                                                <span class="badge rounded-pill badge-light-warning me-1">Deactive</span>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            <div class="dropdown">
+                                            UD
+                                            {{-- <div class="dropdown">
                                                 <button type="button"
                                                     class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -124,31 +117,33 @@
                                                     </svg>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end" style="">
-                                                    <a class="dropdown-item" href="{{ route('faq.edit', $faq->id) }}">
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('faq.edit', $contact->id) }}">
                                                         <i class="fa fa-pencil"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                    @if ($faq->status == true)
+                                                    @if ($contact->status == true)
                                                         <a class="dropdown-item text-warning"
-                                                            href="{{ route('faq.status.toggle', $faq->id) }}">
+                                                            href="{{ route('faq.status.toggle', $contact->id) }}">
                                                             <i class="fa-regular fa-circle-xmark"></i>
                                                             <span>Deactive</span>
                                                         </a>
                                                     @else
                                                         <a class="dropdown-item text-success"
-                                                            href="{{ route('faq.status.toggle', $faq->id) }}">
+                                                            href="{{ route('faq.status.toggle', $contact->id) }}">
                                                             <i class="fa-solid fa-check"></i>
                                                             <span>Active</span>
                                                         </a>
                                                     @endif
-                                                    <form action="{{ route('faq.destroy', $faq->id) }}" method="POST">
+                                                    <form action="{{ route('faq.destroy', $contact->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="dropdown-item text-danger"><i
                                                                 class="fa fa-trash"></i> Delete</button>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </td>
                                     </tr>
                                 @empty

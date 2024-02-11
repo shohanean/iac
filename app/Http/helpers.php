@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Setting;
 
 function setting($name)
@@ -9,4 +10,8 @@ function setting($name)
     } else {
         return "Setting not found";
     }
+}
+function contacts()
+{
+    return Contact::count();
 }

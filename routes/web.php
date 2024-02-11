@@ -8,6 +8,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\MiscController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,5 +47,7 @@ Route::resource('blog', BlogController::class);
 
 Route::get('settings', [SettingController::class, 'index'])->name('settings');
 Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
+
+Route::get('contacts', [MiscController::class, 'contacts_index'])->name('contacts');
 
 require __DIR__ . '/auth.php';

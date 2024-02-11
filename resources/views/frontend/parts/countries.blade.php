@@ -22,8 +22,8 @@
                                         alt=""></a></figure>
                         </div>
                         <div class="content-box">
-                            <div class="flag"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/flag-aus.jpg" alt="">
+                            <div class="flag"><img src="{{ asset('frontend_assets') }}/images/resource/flag-aus.jpg"
+                                    alt="">
                             </div>
                             <h5 class="title"><a href="page-country-details.html">Australia</a></h5>
                             <div class="text">Fusce pretium sem ism the eget mattis.</div>
@@ -42,8 +42,8 @@
                                         alt=""></a></figure>
                         </div>
                         <div class="content-box">
-                            <div class="flag"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/flag-usa.jpg" alt="">
+                            <div class="flag"><img src="{{ asset('frontend_assets') }}/images/resource/flag-usa.jpg"
+                                    alt="">
                             </div>
                             <h5 class="title"><a href="page-country-details.html">United States</a></h5>
                             <div class="text">Fusce pretium sem ism the eget mattis.</div>
@@ -62,8 +62,8 @@
                                         alt=""></a></figure>
                         </div>
                         <div class="content-box">
-                            <div class="flag"><img
-                                    src="{{ asset('frontend_assets') }}/images/resource/flag-dub.jpg" alt="">
+                            <div class="flag"><img src="{{ asset('frontend_assets') }}/images/resource/flag-dub.jpg"
+                                    alt="">
                             </div>
                             <h5 class="title"><a href="page-country-details.html">Dubai</a></h5>
                             <div class="text">Fusce pretium sem ism the eget mattis.</div>
