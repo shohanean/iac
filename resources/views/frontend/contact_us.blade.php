@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Have any question?</h6>
-                                    <a href="tel:+8801829311243">+8801829311243</a>
+                                    <a href="tel:{{ setting('phone') }}">{{ setting('phone') }}</a>
                                 </div>
                             </li>
                             <li>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Write email</h6>
-                                    <a href="mailto:apply@iacedu.info">apply@iacedu.info</a>
+                                    <a href="mailto:{{ setting('email') }}">{{ setting('email') }}</a>
                                 </div>
                             </li>
                             <li>
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="text">
                                     <h6>Visit anytime</h6>
-                                    <span>27 Shaptak Square Lift - 7, Dhanmondi</span>
+                                    <span>{{ setting('address') }}</span>
                                 </div>
                             </li>
                         </ul>

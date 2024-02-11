@@ -58,6 +58,12 @@
                 </li>
             </ul>
         </li>
+        <li class="@yield('settings') nav-item">
+            <a class="d-flex align-items-center" href="{{ route('settings') }}">
+                <i class="fa-solid fa-gears"></i>
+                <span class="menu-title text-truncate" data-i18n="Leaflet Maps">Settings</span>
+            </a>
+        </li>
         <li class="nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span
                     class="menu-title text-truncate" data-i18n="Charts">Reserved</span><span
                     class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>

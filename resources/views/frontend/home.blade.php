@@ -553,7 +553,8 @@
         <div class="auto-container">
             <div class="inner-container">
                 <h5 class="title">Are you Looking for Visa Applications Just Call us!</h5>
-                <a href="tel:+928800683000" class="info-btn"><i class="fa fa-phone"></i> +92 (8800) 6830 00</a>
+                <a href="tel:{{ setting('phone') }}" class="info-btn"><i
+                        class="fa fa-phone"></i>{{ setting('phone') }}</a>
             </div>
         </div>
     </section>
@@ -570,5 +571,4 @@
         </div>
     </section>
     <!--End Blog Section -->
-
 @endsection

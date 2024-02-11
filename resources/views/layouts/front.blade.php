@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>IAC | Study Abroad Consultancy Firm</title>
+    <title>{{ setting('name') }} | {{ setting('heading') }}</title>
     <!-- Stylesheets -->
     <link href="{{ asset('frontend_assets') }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('frontend_assets') }}/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css">
@@ -41,9 +41,8 @@
                         <!-- Info List -->
                         <ul class="list-style-one">
                             <li><i class="fa fa-envelope"></i> <a
-                                    href="mailto:iacstudyabroad@gmail.com">iacstudyabroad@gmail.com</a></li>
-                            <li><i class="fa fa-map-marker"></i> 27 Shaptak Square Lift - 7, Dhanmondi, Dhaka,
-                                Bangladesh</li>
+                                    href="mailto:{{ setting('email') }}">{{ setting('email') }}</a></li>
+                            <li><i class="fa fa-map-marker"></i>{{ setting('address') }}</li>
                         </ul>
                     </div>
 
@@ -61,13 +60,22 @@
 
                 <div class="outer-box">
                     <ul class="social-icon-one">
-                        <li><a target="_blank" href="https://www.facebook.com/iac.bangladesh"><span
-                                    class="fab fa-facebook-square"></span></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/internationalapplicationcentre"><span
-                                    class="fab fa-instagram"></span></a></li>
-                        <li><a target="_blank"
-                                href="https://www.linkedin.com/company/international-application-centre"><span
-                                    class="fab fa-linkedin"></span></a></li>
+                        @if (setting('facebook_link'))
+                            <li><a target="_blank" href="{{ setting('facebook_link') }}"><span
+                                        class="fab fa-facebook-square"></span></a></li>
+                        @endif
+                        @if (setting('instagram_link'))
+                            <li><a target="_blank" href="{{ setting('instagram_link') }}"><span
+                                        class="fab fa-instagram"></span></a></li>
+                        @endif
+                        @if (setting('linkedin_link'))
+                            <li><a target="_blank" href="{{ setting('linkedin_link') }}"><span
+                                        class="fab fa-linkedin"></span></a></li>
+                        @endif
+                        @if (setting('pinterest_link'))
+                            <li><a target="_blank" href="{{ setting('pinterest_link') }}"><span
+                                        class="fab fa-pinterest"></span></a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -103,9 +111,9 @@
                         </nav>
                         <!-- Main Menu End-->
                         <div class="outer-box">
-                            <a href="tel:+8801829311243" class="info-btn">
+                            <a href="tel:{{ setting('phone') }}" class="info-btn">
                                 <i class="icon fa fa-phone"></i>
-                                <small>Call Anytime</small><br> +8801829311243
+                                <small>Call Anytime</small><br> {{ setting('phone') }}
                             </a>
 
                             <div class="ui-btn-outer">
@@ -132,9 +140,8 @@
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 <nav class="menu-box">
                     <div class="upper-box">
-                        <div class="nav-logo"><a href="index.html"><img
-                                    src="{{ asset('frontend_assets') }}/images/logo-2.png" alt=""
-                                    title=""></a></div>
+                        <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{ asset('iac_logo.png') }}"
+                                    alt="not found" title=""></a></div>
                         <div class="close-btn"><i class="icon fa fa-times"></i></div>
                     </div>
 
@@ -147,7 +154,7 @@
                             <div class="contact-info-box">
                                 <i class="icon lnr-icon-phone-handset"></i>
                                 <span class="title">Call Now</span>
-                                <a href="tel:+92880098670">+92 (8800) - 98670</a>
+                                <a href="tel:{{ setting('phone') }}">{{ setting('phone') }}</a>
                             </div>
                         </li>
                         <li>
@@ -155,25 +162,37 @@
                             <div class="contact-info-box">
                                 <span class="icon lnr-icon-envelope1"></span>
                                 <span class="title">Send Email</span>
-                                <a href="mailto:help@company.com">help@company.com</a>
+                                <a href="mailto:{{ setting('email') }}">{{ setting('email') }}</a>
                             </div>
                         </li>
                         <li>
                             <!-- Contact Info Box -->
                             <div class="contact-info-box">
-                                <span class="icon lnr-icon-clock"></span>
-                                <span class="title">Send Email</span>
-                                Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+                                <i class="icon fa fa-address-card"></i>
+                                <span class="title">Our Address</span>
+                                {{ setting('address') }}
                             </div>
                         </li>
                     </ul>
 
 
                     <ul class="social-links">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        @if (setting('facebook_link'))
+                            <li><a href="{{ setting('facebook_link') }}" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                        @endif
+                        @if (setting('instagram_link'))
+                            <li><a href="{{ setting('instagram_link') }}" target="_blank"><i
+                                        class="fab fa-instagram"></i></a></li>
+                        @endif
+                        @if (setting('linkedin_link'))
+                            <li><a href="{{ setting('linkedin_link') }}" target="_blank"><i
+                                        class="fab fa-linkedin"></i></a></li>
+                        @endif
+                        @if (setting('pinterest_link'))
+                            <li><a href="{{ setting('pinterest_link') }}" target="_blank"><i
+                                        class="fab fa-pinterest"></i></a></li>
+                        @endif
                     </ul>
                 </nav>
             </div><!-- End Mobile Menu -->
@@ -256,12 +275,14 @@
                         <div class="footer-column col-xl-3 col-lg-4">
                             <div class="footer-widget about-widget">
                                 <h5 class="widget-title">Contact</h5>
-                                <div class="text">66 Road Broklyn Street, 600 <br>New York, USA</div>
+                                <div class="text">
+                                    {{ setting('address') }}
+                                </div>
                                 <ul class="contact-info">
                                     <li><i class="fa fa-envelope"></i> <a
-                                            href="mailto:needhelp@potisen.com">needhelp@company.com</a><br></li>
-                                    <li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">+92 666 888
-                                            0000</a><br></li>
+                                            href="mailto:{{ setting('email') }}">{{ setting('email') }}</a><br></li>
+                                    <li><i class="fa fa-phone-square"></i> <a
+                                            href="tel:{{ setting('phone') }}">{{ setting('phone') }}</a><br></li>
                                 </ul>
                             </div>
                         </div>
@@ -348,14 +369,29 @@
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="inner-container">
-                        <div class="copyright-text">&copy; Copyright 2023 by <a href="index.html">Company.com</a>
+                        <div class="copyright-text">&copy; Copyright {{ \Carbon\Carbon::now()->format('Y') }} by <a
+                                href="{{ route('home') }}">{{ setting('name') }}</a>, Developed with love by <a
+                                href="https://www.linkedin.com/in/shohanhossainean/" target="_blank">Shohan Hossain
+                                Ean</a>
                         </div>
 
                         <ul class="social-icon-two">
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            @if (setting('facebook_link'))
+                                <li><a href="{{ setting('facebook_link') }}" target="_blank"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                            @endif
+                            @if (setting('instagram_link'))
+                                <li><a href="{{ setting('instagram_link') }}" target="_blank"><i
+                                            class="fab fa-instagram"></i></a></li>
+                            @endif
+                            @if (setting('linkedin_link'))
+                                <li><a href="{{ setting('linkedin_link') }}" target="_blank"><i
+                                            class="fab fa-linkedin"></i></a></li>
+                            @endif
+                            @if (setting('pinterest_link'))
+                                <li><a href="{{ setting('pinterest_link') }}" target="_blank"><i
+                                            class="fab fa-pinterest"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

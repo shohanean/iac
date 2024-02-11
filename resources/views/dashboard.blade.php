@@ -12,18 +12,14 @@
                 <h2 class="content-header-title float-start mb-0">Dashboard</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb ps-1">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
-                        </li>
-                        <li class="breadcrumb-item"><a href="#">Layouts</a>
-                        </li>
-                        <li class="breadcrumb-item active">Layout Empty
+                        <li class="breadcrumb-item active">Dashboard
                         </li>
                     </ol>
                 </div>
             </div>
         </div>
         <div class="row match-height">
-            <!-- Medal Card -->
+            {{-- <!-- Medal Card -->
             <div class="col-xl-4 col-md-6 col-12">
                 <div class="card card-congratulation-medal">
                     <div class="card-body">
@@ -38,20 +34,21 @@
                     </div>
                 </div>
             </div>
-            <!--/ Medal Card -->
+            <!--/ Medal Card --> --}}
 
             <!-- Statistics Card -->
-            <div class="col-xl-8 col-md-6 col-12">
+            <div class="col-xl-12 col-md-12 col-12">
                 <div class="card card-statistics">
                     <div class="card-header">
                         <h4 class="card-title">Statistics</h4>
                         <div class="d-flex align-items-center">
-                            <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
+                            <p class="card-text font-small-2 me-25 mb-0">Updated at
+                                {{ \Carbon\Carbon::now()->format('d/m/Y (h:i:s A)') }}</p>
                         </div>
                     </div>
                     <div class="card-body statistics-body">
                         <div class="row">
-                            <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
                                 <div class="d-flex flex-row">
                                     <div class="avatar bg-light-primary me-2">
                                         <div class="avatar-content">
@@ -64,7 +61,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                            <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
                                 <div class="d-flex flex-row">
                                     <div class="avatar bg-light-info me-2">
                                         <div class="avatar-content">
@@ -72,34 +69,60 @@
                                         </div>
                                     </div>
                                     <div class="my-auto">
-                                        <h4 class="fw-bolder mb-0">8.549k</h4>
+                                        <h4 class="fw-bolder mb-0">{{ $banners }}</h4>
                                         <p class="card-text font-small-3 mb-0">Banners</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                            <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
                                 <div class="d-flex flex-row">
-                                    <div class="avatar bg-light-danger me-2">
+                                    <div class="avatar bg-light-warning me-2">
                                         <div class="avatar-content">
-                                            <i data-feather="box" class="avatar-icon"></i>
+                                            <i class="fa-regular fa-user fa-2x"></i>
                                         </div>
                                     </div>
                                     <div class="my-auto">
-                                        <h4 class="fw-bolder mb-0">1.423k</h4>
-                                        <p class="card-text font-small-3 mb-0">Products</p>
+                                        <h4 class="fw-bolder mb-0">{{ $users }}</h4>
+                                        <p class="card-text font-small-3 mb-0">Users</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
                                 <div class="d-flex flex-row">
-                                    <div class="avatar bg-light-success me-2">
+                                    <div class="avatar bg-light-dark me-2">
                                         <div class="avatar-content">
-                                            <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                            <i class="fa-regular fa-images fa-2x"></i>
                                         </div>
                                     </div>
                                     <div class="my-auto">
-                                        <h4 class="fw-bolder mb-0">$9745</h4>
-                                        <p class="card-text font-small-3 mb-0">Revenue</p>
+                                        <h4 class="fw-bolder mb-0">0</h4>
+                                        <p class="card-text font-small-3 mb-0">Testimonials</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-sm-0">
+                                <div class="d-flex flex-row">
+                                    <div class="avatar bg-light-danger me-2">
+                                        <div class="avatar-content">
+                                            <i class="fa-solid fa-blog fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder mb-0">{{ $blogs }}</h4>
+                                        <p class="card-text font-small-3 mb-0">Blogs</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-sm-6 col-12">
+                                <div class="d-flex flex-row">
+                                    <div class="avatar bg-light-success me-2">
+                                        <div class="avatar-content">
+                                            <i class="fa-solid fa-envelope-open-text fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder mb-0">{{ $messages }}</h4>
+                                        <p class="card-text font-small-3 mb-0">Messages</p>
                                     </div>
                                 </div>
                             </div>

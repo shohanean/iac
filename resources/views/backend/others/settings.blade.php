@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('faq.create')
+@section('settings')
     active
 @endsection
 
@@ -8,12 +8,12 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-start mb-0">Add {{ $term }}</h2>
+                <h2 class="content-header-title float-start mb-0">All {{ $term }}s</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Add {{ $term }}
+                        <li class="breadcrumb-item active">All {{ $term }}s
                         </li>
                     </ol>
                 </div>
@@ -71,11 +71,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Add {{ $term }}</h4>
+                    <h4 class="card-title">Change {{ $term }}</h4>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        You can <code>add</code> new {{ $term }} here
+                        You can <code>change</code> {{ $term }} here
                     </p>
                     @if (session('success'))
                         <div class="alert alert-success" role="alert">
@@ -85,29 +85,32 @@
                             </div>
                         </div>
                     @endif
-                    <form action="{{ route('faq.store') }}" method="POST">
+                    <form action="{{ route('settings.update') }}" method="POST">
                         @csrf
                         <div class="row">
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="question">Question</label>
-                                    <input type="text" class="form-control" id="question" placeholder="Question"
-                                        name="question">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mb-1">
-                                    <label class="form-label" for="answer">Answer</label>
-                                    <div id="editor" height="350">
-
+                            @foreach ($settings as $setting)
+                                <div class="col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="{{ $setting->setting_name }}">
+                                            {{ Str::replace('_', ' ', Str::title($setting->setting_name)) }}
+                                        </label>
+                                        @if ($setting->setting_type == 'text')
+                                            <input type="text" class="form-control"
+                                                name="{{ $setting->setting_name }}" id="{{ $setting->setting_name }}"
+                                                value="{{ $setting->setting_value }}">
+                                        @elseif ($setting->setting_type == 'textarea')
+                                            <textarea class="form-control" name="{{ $setting->setting_name }}" id="{{ $setting->setting_name }}"
+                                                rows="4">{{ $setting->setting_value }}</textarea>
+                                        @else
+                                            Others
+                                        @endif
                                     </div>
-                                    <input type="hidden" id="quill_html" name="answer"></input>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
 
                         <button class="btn btn-primary waves-effect waves-float waves-light"
-                            type="submit">Submit</button>
+                            type="submit">Update</button>
                     </form>
                 </div>
             </div>
