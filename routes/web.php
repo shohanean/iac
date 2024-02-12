@@ -49,5 +49,8 @@ Route::get('settings', [SettingController::class, 'index'])->name('settings');
 Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
 
 Route::get('contacts', [MiscController::class, 'contacts_index'])->name('contacts');
+Route::get('contacts/read/{id}', [MiscController::class, 'contacts_read'])->name('contacts.read');
+Route::get('contacts/delete/{id}', [MiscController::class, 'contacts_delete'])->name('contacts.delete');
+Route::get('contacts/all/read', [MiscController::class, 'contacts_all_read'])->name('contacts.all.read');
 
 require __DIR__ . '/auth.php';

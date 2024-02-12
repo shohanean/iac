@@ -71,13 +71,35 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">All {{ $term }}s</h4>
+                    <div class="content-header-left">
+                        <h4 class="card-title">
+                            All {{ $term }}s
+                        </h4>
+                    </div>
+                    <div class="content-header-right">
+                        <a href="{{ route('contacts.all.read') }}"
+                            class="btn btn-warning waves-effect waves-float waves-light">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span>Mark All Read</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        You will see all your <code>{{ $term }} Messages</code> here.
+                        <span class="badge badge-glow bg-primary">Unread:
+                            {{ $contacts->whereNull('deleted_at')->count() }}</span>
+                        <span class="badge badge-glow bg-secondary">Read:
+                            {{ $contacts->whereNotNull('deleted_at')->count() }}</span>
                     </p>
                     <div class="table-responsive">
+                        @if (session('success'))
+                            <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading">Success</h4>
+                                <div class="alert-body">
+                                    {{ session('success') }}
+                                </div>
+                            </div>
+                        @endif
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -87,63 +109,32 @@
                                     <th>Phone</th>
                                     <th>Subject</th>
                                     <th>Message</th>
+                                    <th>Time</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($contacts as $contact)
-                                    <tr>
-                                        <td>
-                                            <span class="fw-bold">{{ $loop->index + 1 }}</span>
-                                        </td>
+                                    <tr class="@if (!$contact->deleted_at) fw-bold @endif">
+                                        <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $contact->name }}</td>
                                         <td>{{ $contact->email }}</td>
                                         <td>{{ $contact->phone }}</td>
                                         <td>{{ $contact->subject }}</td>
                                         <td>{{ $contact->message }}</td>
+                                        <td>{{ $contact->created_at->diffForHumans() }}</td>
                                         <td>
-                                            UD
-                                            {{-- <div class="dropdown">
-                                                <button type="button"
-                                                    class="btn btn-sm dropdown-toggle hide-arrow py-0 waves-effect waves-float waves-light"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-more-vertical">
-                                                        <circle cx="12" cy="12" r="1"></circle>
-                                                        <circle cx="12" cy="5" r="1"></circle>
-                                                        <circle cx="12" cy="19" r="1"></circle>
-                                                    </svg>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-end" style="">
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('faq.edit', $contact->id) }}">
-                                                        <i class="fa fa-pencil"></i>
-                                                        <span>Edit</span>
-                                                    </a>
-                                                    @if ($contact->status == true)
-                                                        <a class="dropdown-item text-warning"
-                                                            href="{{ route('faq.status.toggle', $contact->id) }}">
-                                                            <i class="fa-regular fa-circle-xmark"></i>
-                                                            <span>Deactive</span>
-                                                        </a>
-                                                    @else
-                                                        <a class="dropdown-item text-success"
-                                                            href="{{ route('faq.status.toggle', $contact->id) }}">
-                                                            <i class="fa-solid fa-check"></i>
-                                                            <span>Active</span>
-                                                        </a>
-                                                    @endif
-                                                    <form action="{{ route('faq.destroy', $contact->id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="dropdown-item text-danger"><i
-                                                                class="fa fa-trash"></i> Delete</button>
-                                                    </form>
-                                                </div>
-                                            </div> --}}
+                                            @if (!$contact->deleted_at)
+                                                <a href="{{ route('contacts.read', $contact->id) }}"
+                                                    class="btn btn-icon rounded-circle btn-outline-primary waves-effect">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            @else
+                                                <a href="{{ route('contacts.delete', $contact->id) }}"
+                                                    class="btn btn-icon rounded-circle btn-outline-danger waves-effect">
+                                                    <i class="fa fa-times"></i>
+                                                </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty

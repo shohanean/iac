@@ -11,7 +11,22 @@ class MiscController extends Controller
     {
         return view('backend.others.contacts', [
             'term' => 'Contact',
-            'contacts' => Contact::latest()->get()
+            'contacts' => Contact::withTrashed()->latest()->get()
         ]);
+    }
+    function contacts_read($id)
+    {
+        Contact::find($id)->delete();
+        return back()->with('success', 'Message Marked As Read!');
+    }
+    function contacts_delete($id)
+    {
+        Contact::withTrashed()->find($id)->forceDelete();
+        return back()->with('success', 'Message Deleted Successfully!');
+    }
+    function contacts_all_read()
+    {
+        Contact::whereNull('deleted_at')->delete();
+        return back();
     }
 }
