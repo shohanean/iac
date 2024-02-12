@@ -91,19 +91,31 @@
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Banner Image</label>
-                                    <input type="file" class="form-control" name="image">
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        name="image">
+                                    @error('image')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Top Line</label>
-                                    <input type="text" class="form-control" name="top_line">
+                                    <input type="text" class="form-control @error('top_line') is-invalid @enderror"
+                                        name="top_line" value="{{ old('top_line') }}">
+                                    @error('top_line')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Tag Line</label>
-                                    <input type="text" class="form-control" name="tag_line">
+                                    <input type="text" class="form-control @error('tag_line') is-invalid @enderror"
+                                        name="tag_line" value="{{ old('tag_line') }}">
+                                    @error('tag_line')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">

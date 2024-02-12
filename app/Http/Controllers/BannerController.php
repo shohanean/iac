@@ -35,6 +35,11 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'top_line' => 'required',
+            'tag_line' => 'required',
+            'image' => 'required|image',
+        ]);
         $image = Image::read($request->file('image'));
         $photoname = "banners/" . Str::random(5) . "." . $request->file('image')->getClientOriginalExtension();
         $image->save(base_path('public/uploads/' . $photoname), 40);

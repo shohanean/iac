@@ -107,9 +107,9 @@
                                         <td>{{ $banner->tag_line }}</td>
                                         <td>
                                             @if ($banner->btn_status)
-                                                <span class="text-success">Show</span>
+                                                <span class="badge badge-light-success">Show</span>
                                             @else
-                                                <span class="text-danger">Hide</span>
+                                                <span class="badge badge-light-dark">Hide</span>
                                             @endif
                                         </td>
                                         <td>{{ $banner->btn_text }}</td>
@@ -146,7 +146,8 @@
                                                             <span>Active</span>
                                                         </a>
                                                     @endif --}}
-                                                    <form action="{{ route('banner.destroy', $banner->id) }}" method="POST">
+                                                    <form action="{{ route('banner.destroy', $banner->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="dropdown-item text-danger"><i
