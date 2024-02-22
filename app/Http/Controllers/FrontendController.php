@@ -32,6 +32,10 @@ class FrontendController extends Controller
         $latests = Blog::with('user')->latest()->take(3)->get();
         return view('frontend.blogs.show', compact('blog', 'latests'));
     }
+    public function blogs_comment(Request $request)
+    {
+        return $request;
+    }
     public function contact_us()
     {
         return view('frontend.contact_us');
