@@ -66,42 +66,38 @@
                         <div class="next">
                             <a href="news-details.html" rel="next">How to lead a healthy &amp; well-balanced life</a>
                         </div>
-                    </div> --}}
+                        </div> --}}
+
                         <div class="comment-one">
-                            <h3 class="comment-one__title">2 Comments</h3>
-                            <div class="comment-one__single">
-                                <div class="comment-one__image"> <img src="https://via.placeholder.com/145x145"
-                                        alt=""> </div>
-                                <div class="comment-one__content">
-                                    <h3>Kevin Martin</h3>
-                                    <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                        Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                        sollicitudin at euismod.
-                                    </p>
-                                    <a href="news-details.html"
-                                        class="theme-btn btn-style-one bg-theme-color4 comment-one__btn"><span
-                                            class="btn-title">Reply</span></a>
+                            <h3 class="comment-one__title">{{ $blog->comments->count() }}
+                                {{ $blog->comments->count() > 1 ? Str::plural('Comment') : 'Comment' }}
+                            </h3>
+                            @forelse ($blog->comments as $comment)
+                                <div class="comment-one__single">
+                                    <div class="comment-one__image"> <img src="https://via.placeholder.com/145x145"
+                                            alt=""> </div>
+                                    <div class="comment-one__content">
+                                        <h3>{{ $comment->user->name }}</h3>
+                                        <p>
+                                            {{ $comment->comment }}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="comment-one__single">
-                                <div class="comment-one__image"> <img src="https://via.placeholder.com/145x145"
-                                        alt=""> </div>
-                                <div class="comment-one__content">
-                                    <h3>Sarah Albert</h3>
-                                    <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                        Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                        sollicitudin at euismod.
-                                    </p>
-                                    <a href="news-details.html"
-                                        class="theme-btn btn-style-one bg-theme-color4 comment-one__btn"><span
-                                            class="btn-title">Reply</span></a>
+                            @empty
+                                <div class="alert alert-info">
+                                    No comment yet!
                                 </div>
-                            </div>
+                            @endforelse
                             <div class="comment-form">
                                 <h3 class="comment-form__title">Leave a Comment</h3>
                                 @auth
+                                    @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                                     <form id="contact_form" name="contact_form" class=""
-                                        action="{{ route('blogs.comment') }}" method="POST">
+                                        action="{{ route('blogs.comment', $blog->id) }}" method="POST">
                                         @csrf
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -118,7 +114,11 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <textarea name="comment" class="form-control required" rows="5" placeholder="Enter Comment"></textarea>
+                                            <textarea name="comment" class="form-control required @error('comment') is-invalid @enderror" rows="5"
+                                                placeholder="Enter Comment"></textarea>
+                                            @error('comment')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <button type="submit" class="theme-btn btn-style-one"
@@ -164,36 +164,21 @@
                         <div class="sidebar__single sidebar__comments">
                             <h3 class="sidebar__title">Recent Comments</h3>
                             <ul class="sidebar__comments-list list-unstyled">
-                                <li>
-                                    <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p>A wordpress commenter on <br>
-                                            launch new mobile app
-                                        </p>
+                                @forelse ($latest_comments as $latest_comment)
+                                    <li>
+                                        <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p>
+                                                {{ $latest_comment->user->name }} commented on <a
+                                                    href="{{ route('blogs.details', $latest_comment->blog->slug) }}">{{ $latest_comment->blog->heading }}</a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                @empty
+                                    <div class="alert alert-info">
+                                        No comment yet
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p> <span>John Doe</span> on template:</p>
-                                        <h5>comments</h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p>A wordpress commenter on <br>
-                                            launch new mobile app
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                    <div class="sidebar__comments-text-box">
-                                        <p> <span>John Doe</span> on template:</p>
-                                        <h5>comments</h5>
-                                    </div>
-                                </li>
+                                @endforelse
                             </ul>
                         </div>
                     </div>

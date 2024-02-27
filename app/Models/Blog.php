@@ -10,7 +10,12 @@ class Blog extends Model
 {
     use HasFactory, SoftDeletes;
     protected $guarded = [];
-    function user(){
+    function user()
+    {
         return $this->hasOne(User::class, "id", "user_id");
+    }
+    function comments()
+    {
+        return $this->hasMany(Comment::class, "blog_id", "id");
     }
 }

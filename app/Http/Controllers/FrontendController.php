@@ -6,6 +6,7 @@ use App\Models\Faq;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -28,13 +29,22 @@ class FrontendController extends Controller
     }
     public function blogs_details($slug)
     {
-        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $blog = Blog::with('comments')->where('slug', $slug)->firstOrFail();
         $latests = Blog::with('user')->latest()->take(3)->get();
-        return view('frontend.blogs.show', compact('blog', 'latests'));
+        $latest_comments = Comment::with('blog')->latest()->take(5)->get();
+        return view('frontend.blogs.show', compact('blog', 'latests', 'latest_comments'));
     }
-    public function blogs_comment(Request $request)
+    public function blogs_comment($blog_id, Request $request)
     {
-        return $request;
+        $request->validate([
+            'comment' => "required"
+        ]);
+        Comment::create([
+            'blog_id' => $blog_id,
+            'user_id' => auth()->user()->id,
+            'comment' => $request->comment,
+        ]);
+        return back()->with('success', 'Comment Added Successfully!');
     }
     public function contact_us()
     {

@@ -93,20 +93,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($banners as $banner)
+                                @forelse ($blogs as $blog)
                                     <tr>
                                         <td>
                                             <span class="fw-bold">{{ $loop->index + 1 }}</span>
                                         </td>
                                         <td>
-                                            <img width="150" src="{{ asset('uploads') }}/{{ $banner->image }}"
+                                            <img width="150" src="{{ asset('uploads') }}/{{ $blog->image }}"
                                                 alt="not found">
                                         </td>
-                                        <td>{{ $banner->top_line }}</td>
-                                        <td>{{ $banner->tag_line }}</td>
-                                        <td>{{ $banner->btn_status }}</td>
-                                        <td>{{ $banner->btn_text }}</td>
-                                        <td>{{ $banner->btn_link }}</td>
+                                        <td>{{ $blog->heading }}</td>
+                                        <td>{{ $blog->created_at }}</td>
+                                        <td>{{ $blog->updated_at }}</td>
                                         {{-- <td>
                                             <div class="dropdown">
                                                 <button type="button"
