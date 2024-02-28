@@ -36,10 +36,13 @@
                         </div>
                         <div class="blog-details__content">
                             <ul class="list-unstyled blog-details__meta">
-                                <li><a href="news-details.html"><i class="fas fa-user-circle"></i>
-                                        {{ $blog->user->name }}</a> </li>
-                                <li><a href="news-details.html"><i class="fas fa-comments"></i> 02
-                                        Comments</a>
+                                <li>
+                                    <i class="fas fa-user-circle"></i>
+                                    {{ $blog->user->name }}
+                                </li>
+                                <li><i class="fas fa-comments"></i>
+                                    {{ $blog->comments->count() }}
+                                    {{ $blog->comments->count() > 1 ? Str::plural('Comment') : 'Comment' }}
                                 </li>
                             </ul>
                             <h3 class="blog-details__title">
@@ -53,19 +56,58 @@
                             <p class="blog-details__tags">
                                 <span>Share Via:</span>
                             </p>
-                            <div class="blog-details__social-list"> <a href="news-details.html"><i
-                                        class="fab fa-twitter"></i></a> <a href="news-details.html"><i
-                                        class="fab fa-facebook"></i></a> <a href="news-details.html"><i
-                                        class="fab fa-pinterest-p"></i></a> <a href="news-details.html"><i
-                                        class="fab fa-instagram"></i></a> </div>
+                            <div class="blog-details__social-list">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}"
+                                    target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ url()->full() }}"
+                                    target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="p-4 col-6 border">
+                                @if ($previous)
+                                    <a href="{{ route('blogs.details', $previous->slug) }}">
+                                        <div class="float-start">
+                                            <span class="badge bg-dark">
+                                                <i class="fa fa-angle-double-left"></i>
+                                                Previous
+                                            </span>
+                                            <br>
+                                            {{ $previous->heading }}
+                                        </div>
+                                    </a>
+                                @endif
+                            </div>
+                            <div class="p-4 col-6 border">
+                                @if ($next)
+                                    <a href="{{ route('blogs.details', $next->slug) }}">
+                                        <div class="float-end text-right">
+                                            <span class="badge bg-dark">
+                                                Next
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </span>
+                                            <br>
+                                            {{ $next->heading }}
+                                        </div>
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                         {{-- <div class="nav-links">
-                        <div class="prev">
-                            <a href="news-details.html" rel="prev">True factors of the modern healthy lifestyle</a>
-                        </div>
-                        <div class="next">
-                            <a href="news-details.html" rel="next">How to lead a healthy &amp; well-balanced life</a>
-                        </div>
+                            @if ($previous)
+                                <div class="prev">
+                                    <a href="{{ route('blogs.details', $previous->slug) }}" rel="prev">
+                                        Previous: {{ $previous->heading }}
+                                    </a>
+                                </div>
+                            @endif
+                            @if ($next)
+                                <div class="next">
+                                    <a href="{{ route('blogs.details', $next->slug) }}" rel="next">
+                                        Next: {{ $next->heading }}
+                                    </a>
+                                </div>
+                            @endif
                         </div> --}}
 
                         <div class="comment-one">
@@ -74,17 +116,20 @@
                             </h3>
                             @forelse ($blog->comments as $comment)
                                 <div class="comment-one__single">
-                                    <div class="comment-one__image"> <img src="https://via.placeholder.com/145x145"
-                                            alt=""> </div>
+                                    <div class="comment-one__image">
+                                        <img src="https://via.placeholder.com/145x145" alt="not found">
+                                    </div>
+
                                     <div class="comment-one__content">
-                                        <h3>{{ $comment->user->name }}</h3>
+                                        <span class="badge bg-primary">{{ $comment->user->name }}</span>
+                                        <span class="badge bg-secondary">{{ $comment->created_at->diffForHumans() }}</span>
                                         <p>
                                             {{ $comment->comment }}
                                         </p>
                                     </div>
                                 </div>
                             @empty
-                                <div class="alert alert-info">
+                                <div class="alert alert-info mb-4">
                                     No comment yet!
                                 </div>
                             @endforelse

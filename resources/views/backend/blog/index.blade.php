@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('banner.index')
+@section('blog.index')
     active
 @endsection
 
@@ -85,11 +85,10 @@
                                 <tr>
                                     <th>SL. No</th>
                                     <th>Image</th>
-                                    <th>Top Line</th>
-                                    <th>Tag Line</th>
-                                    <th>Button Status</th>
-                                    <th>Button Text</th>
-                                    <th>Button Link</th>
+                                    <th>Heading</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -105,6 +104,7 @@
                                         <td>{{ $blog->heading }}</td>
                                         <td>{{ $blog->created_at }}</td>
                                         <td>{{ $blog->updated_at }}</td>
+                                        <td>-</td>
                                         {{-- <td>
                                             <div class="dropdown">
                                                 <button type="button"

@@ -32,7 +32,9 @@ class FrontendController extends Controller
         $blog = Blog::with('comments')->where('slug', $slug)->firstOrFail();
         $latests = Blog::with('user')->latest()->take(3)->get();
         $latest_comments = Comment::with('blog')->latest()->take(5)->get();
-        return view('frontend.blogs.show', compact('blog', 'latests', 'latest_comments'));
+        $previous = Blog::where('id', '<', $blog->id)->orderBy('id', 'desc')->first();
+        $next = Blog::where('id', '>', $blog->id)->orderBy('id')->first();
+        return view('frontend.blogs.show', compact('blog', 'latests', 'latest_comments', 'previous', 'next'));
     }
     public function blogs_comment($blog_id, Request $request)
     {
