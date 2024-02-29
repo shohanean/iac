@@ -20,5 +20,5 @@
 
     @include('frontend.parts.about')
     @include('frontend.parts.countries')
-    @include('frontend.parts.services')
+    @include('frontend.parts.visas')
 @endsection

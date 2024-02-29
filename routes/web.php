@@ -6,6 +6,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\VisaController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\MiscController;
@@ -42,9 +43,12 @@ Route::get('google/callback', [GoogleController::class, 'callback'])->name('goog
 
 Route::get('faq/status/toggle/{faq}', [FaqController::class, 'faq_status_toggle'])->name('faq.status.toggle');
 
-Route::resource('faq', FaqController::class);
-Route::resource('banner', BannerController::class);
-Route::resource('blog', BlogController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('faq', FaqController::class);
+    Route::resource('banner', BannerController::class);
+    Route::resource('visa', VisaController::class);
+    Route::resource('blog', BlogController::class);
+});
 
 Route::get('settings', [SettingController::class, 'index'])->name('settings');
 Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
