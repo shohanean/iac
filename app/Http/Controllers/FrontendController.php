@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Comment;
+use App\Models\Visa;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -16,11 +17,14 @@ class FrontendController extends Controller
         $faqs = Faq::where('status', true)->get();
         $banners = Banner::all();
         $blogs = Blog::with('user')->latest()->take(3)->get();
-        return view('frontend.home', compact('faqs', 'banners', 'blogs'));
+        $visas = Visa::all();
+        return view('frontend.home', compact('faqs', 'banners', 'blogs', 'visas'));
     }
     public function about()
     {
-        return view('frontend.about');
+        return view('frontend.about', [
+            'visas' => Visa::all()
+        ]);
     }
     public function blogs()
     {

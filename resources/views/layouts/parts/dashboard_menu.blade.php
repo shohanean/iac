@@ -44,6 +44,22 @@
         </li>
         <li class="nav-item">
             <a class="d-flex align-items-center" href="#">
+                <i class="icon fas fa-plane-departure"></i>
+                <span class="menu-title text-truncate" data-i18n="Charts">Visa</span>
+            </a>
+            <ul class="menu-content">
+                <li class="@yield('visa.create')"><a class="d-flex align-items-center" href="{{ route('visa.create') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Chartjs">Add
+                            Visa</span></a>
+                </li>
+                <li class="@yield('visa.index')"><a class="d-flex align-items-center" href="{{ route('visa.index') }}"><i
+                            data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">All
+                            Visa</span></a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="d-flex align-items-center" href="#">
                 <i class="fa-solid fa-blog"></i>
                 <span class="menu-title text-truncate" data-i18n="Charts">Blog</span>
             </a>

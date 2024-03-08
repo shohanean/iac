@@ -19,13 +19,12 @@
             </div>
         </div>
         <div class="row">
-            @for ($i = 1; $i < 9; $i++)
+            @forelse ($visas as $visa)
                 <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="page-service-details.html"><img
-                                        src="{{ asset('frontend_assets') }}/images/resource/service-1.jpg" alt /></a>
+                                <a href="page-service-details.html"><img src="{{ asset('uploads') }}/{{ $visa->image }}" alt="not found" /></a>
                             </figure>
                             <div class="icon-box">
                                 <i class="icon fas fa-plane-departure"></i>
@@ -33,18 +32,19 @@
                         </div>
                         <div class="content-box">
                             <h5 class="title">
-                                <a href="page-service-details.html">Student Visa</a>
+                                <a href="page-service-details.html">{{ $visa->title }}</a>
                             </h5>
                             <div class="text">
-                                Fusce pretium sem ism the eget mattis. Nam hendrerit elit
-                                vel urna fermentum congue.
+                                {{ $visa->short_details }}
                             </div>
                             <a href="page-service-details.html" class="read-more">Read More <i
                                     class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @empty
+                <div class="alert alert-info">Nothing to show here</div>
+            @endforelse
         </div>
     </div>
 </section>
