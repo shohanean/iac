@@ -24,7 +24,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href="page-service-details.html"><img src="{{ asset('uploads') }}/{{ $visa->image }}" alt="not found" /></a>
+                                <img src="{{ asset('uploads') }}/{{ $visa->image }}" alt="not found" />
                             </figure>
                             <div class="icon-box">
                                 <i class="icon fas fa-plane-departure"></i>
@@ -32,13 +32,21 @@
                         </div>
                         <div class="content-box">
                             <h5 class="title">
-                                <a href="page-service-details.html">{{ $visa->title }}</a>
+                                {{ $visa->title }}
                             </h5>
                             <div class="text">
                                 {{ $visa->short_details }}
                             </div>
-                            <a href="page-service-details.html" class="read-more">Read More <i
+                            <a data-bs-toggle="collapse" href="#collapseExample_{{ $loop->index + 1 }}" role="button"
+                                aria-expanded="false" class="read-more">Read More <i
                                     class="fa fa-long-arrow-alt-right"></i></a>
+
+
+                            <div class="collapse mt-2" id="collapseExample_{{ $loop->index + 1 }}">
+                                <div class="card card-body">
+                                    {{ $visa->long_details }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
