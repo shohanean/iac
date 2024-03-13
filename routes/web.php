@@ -8,6 +8,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VisaController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\MiscController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('banner', BannerController::class);
     Route::resource('visa', VisaController::class);
     Route::resource('blog', BlogController::class);
+    Route::resource('country', CountryController::class);
 });
 
 Route::get('settings', [SettingController::class, 'index'])->name('settings');

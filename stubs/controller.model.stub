@@ -13,7 +13,9 @@ class {{ class }} extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.{{ modelVariable }}.index', [
+            'term' => '{{ model }}'
+        ]);
     }
 
     /**
@@ -21,7 +23,9 @@ class {{ class }} extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.{{ modelVariable }}.create', [
+            'term' => '{{ model }}'
+        ]);
     }
 
     /**
@@ -29,7 +33,7 @@ class {{ class }} extends Controller
      */
     public function store({{ storeRequest }} $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -37,7 +41,9 @@ class {{ class }} extends Controller
      */
     public function show({{ model }} ${{ modelVariable }})
     {
-        //
+        return view('backend.{{ model }}.show', [
+            '{{ modelVariable }}' => '{{ model }}'
+        ]);
     }
 
     /**
@@ -45,7 +51,9 @@ class {{ class }} extends Controller
      */
     public function edit({{ model }} ${{ modelVariable }})
     {
-        //
+        return view('backend.{{ model }}.edit', [
+            '{{ modelVariable }}' => ${{ modelVariable }}
+        ]);
     }
 
     /**
@@ -53,7 +61,7 @@ class {{ class }} extends Controller
      */
     public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }})
     {
-        //
+        return $request;
     }
 
     /**
@@ -61,6 +69,6 @@ class {{ class }} extends Controller
      */
     public function destroy({{ model }} ${{ modelVariable }})
     {
-        //
+        return ${{ modelVariable }};
     }
 }
