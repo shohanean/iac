@@ -33,6 +33,12 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'caption' => 'required',
+            'flag' => 'image|required',
+            'image' => 'image|required'
+        ]);
         Country::create([
             'user_id' => auth()->id(),
             'name' => $request->name,

@@ -11,7 +11,7 @@
         <div class="carousel-outer">
             <!-- Countries Carousel -->
             <div class="countries-carousel owl-carousel owl-theme">
-                @foreach ($countries as $country)
+                @forelse ($countries as $country)
                     <!-- Country Block -->
                     <div class="country-block">
                         <div class="inner-box">
@@ -32,7 +32,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @empty
+                    <div class="alert alert-danger">
+                        Nothing to show
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>
