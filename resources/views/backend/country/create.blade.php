@@ -91,7 +91,8 @@
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                        name="name" value="{{ old('name') }}">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -100,7 +101,8 @@
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Caption</label>
-                                    <input type="text" class="form-control @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}">
+                                    <input type="text" class="form-control @error('caption') is-invalid @enderror"
+                                        name="caption" value="{{ old('caption') }}">
                                     @error('caption')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -109,7 +111,8 @@
                             <div class="col-12">
                                 <div class="mb-1">
                                     <label class="form-label">Flag</label>
-                                    <input type="file" class="form-control @error('flag') is-invalid @enderror" name="flag">
+                                    <input type="file" class="form-control @error('flag') is-invalid @enderror"
+                                        name="flag">
                                     @error('flag')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -117,9 +120,10 @@
                             </div>
                             <div class="col-12">
                                 <div class="mb-1">
-                                    <label class="form-label">Image</label>
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
-                                    @error('image')
+                                    <label class="form-label">Country Image</label>
+                                    <input type="file" class="form-control @error('country') is-invalid @enderror"
+                                        name="country">
+                                    @error('country')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

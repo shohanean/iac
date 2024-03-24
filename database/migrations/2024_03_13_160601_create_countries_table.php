@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->text('caption');
             $table->string('flag');
-            $table->string('image');
+            $table->string('country');
             $table->timestamps();
             $table->softDeletes();
         });

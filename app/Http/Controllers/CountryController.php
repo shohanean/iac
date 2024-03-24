@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Laravel\Facades\Image;
 
 class CountryController extends Controller
 {
@@ -37,16 +39,25 @@ class CountryController extends Controller
             'name' => 'required',
             'caption' => 'required',
             'flag' => 'image|required',
-            'image' => 'image|required'
+            'country' => 'image|required'
         ]);
+
+        $flag = Image::read($request->file('flag'));
+        $flagname = "flags/" . Str::random(5) . "." . $request->file('flag')->getClientOriginalExtension();
+        $flag->save(base_path('public/uploads/' . $flagname), 90);
+
+        $country = Image::read($request->file('country'));
+        $countryname = "countries/" . Str::random(5) . "." . $request->file('country')->getClientOriginalExtension();
+        $country->save(base_path('public/uploads/' . $countryname), 90);
+
         Country::create([
             'user_id' => auth()->id(),
             'name' => $request->name,
             'caption' => $request->caption,
-            'flag' => "asd",
-            'image' => "xc"
+            'flag' => $flagname,
+            'country' => $countryname
         ]);
-        return back();
+        return back()->with('success', 'Country added successfully!');
     }
 
     /**
