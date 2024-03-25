@@ -31,7 +31,10 @@ Route::get('blogs/{slug}', [FrontendController::class, 'blogs_details'])->name('
 Route::post('blogs/comment/{blog_id}', [FrontendController::class, 'blogs_comment'])->name('blogs.comment');
 Route::get('contact-us', [FrontendController::class, 'contact_us'])->name('contact.us');
 Route::post('contact-us', [FrontendController::class, 'contact_us_post'])->name('contact.us.post');
+
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('role', [DashboardController::class, 'role'])->middleware(['auth', 'verified'])->name('role');
+Route::post('role', [DashboardController::class, 'role_store'])->middleware(['auth', 'verified'])->name('role.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -45,11 +48,11 @@ Route::get('google/callback', [GoogleController::class, 'callback'])->name('goog
 Route::get('faq/status/toggle/{faq}', [FaqController::class, 'faq_status_toggle'])->name('faq.status.toggle');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('faq', FaqController::class);
-    Route::resource('banner', BannerController::class);
-    Route::resource('visa', VisaController::class);
-    Route::resource('blog', BlogController::class);
-    Route::resource('country', CountryController::class);
+    Route::resource('banner', BannerController::class)->middleware('can:banner operation');
+    Route::resource('faq', FaqController::class)->middleware('can:faq operation');
+    Route::resource('country', CountryController::class)->middleware('can:country operation');
+    Route::resource('visa', VisaController::class)->middleware('can:visa operation');
+    Route::resource('blog', BlogController::class)->middleware('can:blog operation');
 });
 
 Route::get('settings', [SettingController::class, 'index'])->name('settings');

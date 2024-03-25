@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
 
 class RolePermissionSeeder extends Seeder
 {
@@ -23,5 +24,12 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'country operation'])->assignRole($admin);
         Permission::create(['name' => 'visa operation'])->assignRole($admin);
         Permission::create(['name' => 'blog operation'])->assignRole($admin);
+
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('123456789')
+        ]);
+        $user->assignRole('admin');
     }
 }
