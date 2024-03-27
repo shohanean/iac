@@ -153,9 +153,10 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
                             <div class="role-heading">
-                                <h4 class="fw-bolder">{{ Str::title($role->name) }}</h4>
+                                <h6><i class="fa fa-users"></i></h6>
+                                <h6>{{ Str::title($role->name) }}</h6>
                                 <a href="#">
-                                    <small class="fw-bolder">Edit Role</small>
+                                    <small class="fw-bolder">Edit Role(UD)</small>
                                 </a>
                             </div>
                         </div>
