@@ -170,15 +170,26 @@
         access to what he need
     </p>
     <div class="row">
+        @if (session('role_success'))
+        <div class="col-12">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Success</h4>
+                <div class="alert-body">
+                    {{ session('role_success') }}
+                </div>
+            </div>
+        </div>
+        @endif
+
         @foreach ($nonStudents as $nonStudent)
             <div class="col-2">
                 <div class="card">
                     <div class="card-body">
-                        <form action="asd" method="POST">
+                        <form action="{{ route('role.change', $nonStudent->id) }}" method="POST">
+                            @method('PUT')
                             @csrf
                             <h6>{{ $nonStudent->name }}</h6>
-                            <select onchange="this.form.submit()" name="shohan" class="form-select">
-                                <option value="">-Select One-</option>
+                            <select onchange="this.form.submit()" name="role_name" class="form-select">
                                 @foreach ($roles as $role)
                                     <option value="{{ $role->name }}"
                                         {{ $nonStudent->getRoleNames()->first() == $role->name ? 'selected' : '' }}>

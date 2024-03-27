@@ -35,6 +35,7 @@ Route::post('contact-us', [FrontendController::class, 'contact_us_post'])->name(
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('role', [DashboardController::class, 'role'])->middleware(['auth', 'verified'])->name('role');
 Route::post('role', [DashboardController::class, 'role_store'])->middleware(['auth', 'verified'])->name('role.store');
+Route::put('role/change/{id}', [DashboardController::class, 'role_change'])->middleware(['auth', 'verified'])->name('role.change');
 
 Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
