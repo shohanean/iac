@@ -16,6 +16,7 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
+        return "asd";
         return view('dashboard', [
             'banners' => Banner::count(),
             'faqs' => Faq::count(),
@@ -44,7 +45,8 @@ class DashboardController extends Controller
         $role->givePermissionTo($request->permissions);
         return back()->with('success', 'Role added successfully!');
     }
-    public function role_change($id, Request $request){
+    public function role_change($id, Request $request)
+    {
         User::find($id)->syncRoles($request->role_name);
         return back()->with('role_success', 'Role changed successfully!');
     }

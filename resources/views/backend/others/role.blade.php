@@ -165,21 +165,21 @@
             </div>
         @endforeach
     </div>
-    <h3>Users List</h3>
+    <h3>Users List (Without Students)</h3>
     <p class="mb-2">
         A role provided access to predefined menus and features so that depending on assigned role an administrator can have
         access to what he need
     </p>
     <div class="row">
         @if (session('role_success'))
-        <div class="col-12">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Success</h4>
-                <div class="alert-body">
-                    {{ session('role_success') }}
+            <div class="col-12">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Success</h4>
+                    <div class="alert-body">
+                        {{ session('role_success') }}
+                    </div>
                 </div>
             </div>
-        </div>
         @endif
 
         @foreach ($nonStudents as $nonStudent)
