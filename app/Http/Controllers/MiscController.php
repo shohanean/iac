@@ -29,4 +29,7 @@ class MiscController extends Controller
         Contact::whereNull('deleted_at')->delete();
         return back();
     }
+    function eligibility_test(){
+        return view('backend.others.eligibility_test');
+    }
 }

@@ -24,7 +24,10 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'country operation'])->assignRole($admin);
         Permission::create(['name' => 'visa operation'])->assignRole($admin);
         Permission::create(['name' => 'blog operation'])->assignRole($admin);
+        Permission::create(['name' => 'statistics report'])->assignRole($admin);
+        Permission::create(['name' => 'graph report'])->assignRole($admin);
 
+        Permission::create(['name' => 'student dashboard'])->assignRole($student);
         $user = User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',

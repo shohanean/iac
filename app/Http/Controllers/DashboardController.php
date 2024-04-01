@@ -16,7 +16,6 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return "asd";
         return view('dashboard', [
             'banners' => Banner::count(),
             'faqs' => Faq::count(),
