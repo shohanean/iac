@@ -155,9 +155,39 @@
                             <div class="role-heading">
                                 <h6><i class="fa fa-users"></i></h6>
                                 <h6>{{ Str::title($role->name) }}</h6>
-                                <a href="#">
-                                    <small class="fw-bolder">Edit Role(UD)</small>
+                                <a href="" data-bs-toggle="modal"
+                                    data-bs-target="#view_permissions_list_model_{{ $role->id }}">
+                                    <small class="fw-bolder">View Permissions List</small>
                                 </a>
+                                <!-- Modal Start -->
+                                <div class="modal fade" id="view_permissions_list_model_{{ $role->id }}"
+                                    tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Permissions List
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul>
+
+                                                    @forelse ($role->permissions as $permission)
+                                                        <li>{{ Str::title($permission->name) }}</li>
+                                                    @empty
+                                                        <li class="text-danger">Nothing to show</li>
+                                                    @endforelse
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Ok</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal End -->
                             </div>
                         </div>
                     </div>
